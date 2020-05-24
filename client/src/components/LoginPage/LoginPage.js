@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../_actions/userAction";
 import { withRouter } from "react-router-dom";
+import aboutFHD from "../../images/aboutFHD.png";
+import "./loginStyle.scss";
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -30,7 +32,9 @@ function LoginPage(props) {
 
     dispatch(loginUser(body)).then((response) => {
       if (response.payload.loginSuccess) {
+        alert("로그인에 성공하셨습니다.");
         props.history.push("/");
+        window.location.reload(); // 페이지 로딩이 정상적으로 안돼서 그냥 리로드 시킨다.
       } else {
         alert("Login Error");
       }
@@ -38,32 +42,64 @@ function LoginPage(props) {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100vh",
-      }}
-    >
-      <form
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-        onSubmit={onSubmitHandler}
+    <main id="main">
+      <section
+        className="banner"
+        style={{ backgroundImage: `url(${aboutFHD})` }}
       >
-        {/* 타이핑을 할때 onChange 이벤트를 발생시켜서 state를 바꿔준다.
-        state가 바뀌면 value가 바뀐다. */}
-        <label>Email</label>
-        <input type="email" value={Email} onChange={onEmailHandler} />
-        <label>Password</label>
-        <input type="password" value={Password} onChange={onPasswordHandler} />
-        <br />
-        <button>Login</button>
-      </form>
-    </div>
+        <span className="sale-percent">Best of best</span>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              <div className="caption">
+                <h1 className="main-heading heading-1">Login</h1>
+                <ul className="list-unstyled breadcrumbs">
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">Collection</a>
+                  </li>
+                  <li>Login</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span className="year">TRENDS FOR 2020</span>
+      </section>
+      <section className="form-sec">
+        <form className="contact-form" onSubmit={onSubmitHandler}>
+          <fieldset>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type="email"
+                placeholder="Email"
+                required="true"
+                value={Email}
+                onChange={onEmailHandler}
+              ></input>
+            </div>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type="password"
+                placeholder="Password"
+                required="true"
+                value={Password}
+                onChange={onPasswordHandler}
+              ></input>
+            </div>
+            <div className="form-group">
+              <a href="#">Forget Password</a>
+              <button className="btn-primary btn-login">Login</button>
+              <button className="btn-naver">네이버로그인</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
   );
 }
 

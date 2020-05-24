@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../_actions/userAction";
 import { withRouter } from "react-router-dom";
+import aboutFHD from "../../images/aboutFHD.png";
 
 function RegisterPage(props) {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ function RegisterPage(props) {
 
     dispatch(registerUser(body)).then((response) => {
       if (response.payload.success) {
+        alert("회원가입이 완료되었습니다.");
         props.history.push("/login");
       } else {
         alert("Failed to sign up");
@@ -50,41 +52,82 @@ function RegisterPage(props) {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100vh",
-      }}
-    >
-      <form
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-        onSubmit={onSubmitHandler}
+    <main id="main">
+      <section
+        className="banner"
+        style={{ backgroundImage: `url(${aboutFHD})` }}
       >
-        <label>Email</label>
-        <input type="email" value={Email} onChange={onEmailHandler} />
-
-        <label>Name</label>
-        <input type="text" value={Name} onChange={onNameHandler} />
-
-        <label>Password</label>
-        <input type="password" value={Password} onChange={onPasswordHandler} />
-
-        <label>Comfirm Password</label>
-        <input
-          type="password"
-          value={ConfirmPassword}
-          onChange={onConfirmPasswordHandler}
-        />
-        <br />
-        <button>회원 가입</button>
-      </form>
-    </div>
+        <span className="sale-persent">Best of best</span>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              <div className="caption">
+                <h1 className="main-heading heading-1">Register</h1>
+                <ul className="list-unstyled breadcrumbs">
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">Collection</a>
+                  </li>
+                  <li>회원가입</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span className="year">TRENDS FOR 2020</span>
+      </section>
+      <section className="form-sec">
+        <form className="contact-form" onSubmit={onSubmitHandler}>
+          <fieldset>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type="email"
+                placeholder="Email"
+                required="true"
+                value={Email}
+                onChange={onEmailHandler}
+              ></input>
+            </div>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Name"
+                required="true"
+                value={Name}
+                onChange={onNameHandler}
+              ></input>
+            </div>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type="password"
+                placeholder="Password"
+                required="true"
+                value={Password}
+                onChange={onPasswordHandler}
+              ></input>
+            </div>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type="password"
+                placeholder="ConfirmPassword"
+                required="true"
+                value={ConfirmPassword}
+                onChange={onConfirmPasswordHandler}
+              ></input>
+            </div>
+            <div className="form-group">
+              <button className="btn-primary btn-login">Join</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
   );
 }
 
