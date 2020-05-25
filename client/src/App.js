@@ -9,7 +9,7 @@ import "./css/bootstrap.css";
 import "./css/fonts.css";
 import "./css/animate.css";
 import "./css/slick.css";
-import "./style.css";
+import "./style.scss";
 import "./css/color/color.css";
 import Loader from "./components/_partials/Loader/Loader";
 import Header from "./components/_partials/Header/Header";
