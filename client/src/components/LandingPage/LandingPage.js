@@ -3,16 +3,6 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 
 function LandingPage(props) {
-  const onClickHandler = () => {
-    axios.get("/api/users/logout").then((response) => {
-      if (response.data.success) {
-        props.history.push("/login");
-      } else {
-        alert("Failed Logout!!");
-      }
-    });
-  };
-
   return (
     <>
       {/* contain main informative part of the site */}

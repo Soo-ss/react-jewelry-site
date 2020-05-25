@@ -19,6 +19,8 @@ import BackTop from "./components/_partials/BackTop/BackTop";
 import AboutPage from "./components/AboutPage/AboutPage";
 import CollectionPage from "./components/CollectionPage/CollectionPage";
 import EventPage from "./components/EventPage/EventPage";
+import ReservationPage from "./components/ReservationPage/ReservationPage";
+import ReviewPage from "./components/ReviewPage/ReviewPage";
 
 function App() {
   // init third party JS files
@@ -53,10 +55,13 @@ function App() {
     <>
       <Loader />
       <div id="wrapper">
-        <Header />
         <Search />
-        {/* Router */}
+        {/* // null     => 아무나 출입이 가능한 페이지
+            // true     => 로그인한 유저만 출입이 가능한 페이지
+            // false    => 로그인한 유저는 출입 불가능한 페이지
+            // admin은 true주면됨 */}
         <Router>
+          <Header />
           <Switch>
             <Route exact path="/" component={Auth(LandingPage, null)} />
             <Route exact path="/about" component={Auth(AboutPage, null)} />
@@ -72,6 +77,12 @@ function App() {
               path="/register"
               component={Auth(RegisterPage, false)}
             />
+            <Route
+              exact
+              path="/reservation"
+              component={Auth(ReservationPage, true)}
+            />
+            <Route exact path="/review" component={Auth(ReviewPage, null)} />
           </Switch>
         </Router>
         <BackTop />

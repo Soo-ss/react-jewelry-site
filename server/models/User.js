@@ -29,6 +29,18 @@ const userSchema = mongoose.Schema({
   tokenExp: {
     type: Number,
   },
+  reviews: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Review", // ex. ID 1에 해당하는 리뷰를 가져온다.
+    },
+  ],
+  reservations: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Reservation",
+    },
+  ],
 });
 
 /*

@@ -92,7 +92,7 @@ function LoginPage(props) {
               ></input>
             </div>
             <div className="form-group">
-              <a href="#">Forget Password</a>
+              <a href="#">Forget Password?</a>
               <button className="btn-primary btn-login">Login</button>
               <button className="btn-naver">네이버로그인</button>
             </div>
