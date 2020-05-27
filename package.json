@@ -2,13 +2,16 @@
   "name": "my-boiler-plate",
   "version": "1.0.0",
   "scripts": {
+    "build:server": "babel server --out-dir buildServer",
     "client": "cd client && yarn start",
-    "server": "nodemon server/index.js",
+    "server": "nodemon --exec babel-node server/index.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node server/index.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start": "node buildServer/index.js",
+    "heroku-postbuild": "npm run build:server && cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "dependencies": {
+    "@babel/node": "7.8.7",
+    "@babel/preset-env": "7.10.0",
     "bcrypt": "4.0.1",
     "body-parser": "^1.18.3",
     "cookie-parser": "1.4.5",
@@ -19,6 +22,8 @@
     "morgan": "1.10.0"
   },
   "devDependencies": {
+    "@babel/cli": "7.10.0",
+    "@babel/core": "7.10.0",
     "concurrently": "^4.0.1"
   }
 }
