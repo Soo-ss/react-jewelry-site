@@ -10,6 +10,7 @@ import momento6 from "../../images/momento6.jpeg";
 import momento7 from "../../images/momento7.jpeg";
 import graceful from "../../images/graceful.jpg";
 import dprincess from "../../images/dPrincess.jpg";
+import { withRouter } from "react-router-dom";
 
 function CollectionPage() {
   return (
@@ -315,4 +316,4 @@ function CollectionPage() {
   );
 }
 
-export default CollectionPage;
+export default withRouter(CollectionPage);

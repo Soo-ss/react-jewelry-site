@@ -4,6 +4,7 @@ import newYear from "../../images/2020.jpg";
 import review from "../../images/review.jpg";
 import plusFriend from "../../images/plusFriend.jpg";
 import reviewBG from "../../images/reviewBG.jpg";
+import { withRouter } from "react-router-dom";
 
 function EventPage() {
   return (
@@ -176,4 +177,4 @@ function EventPage() {
   );
 }
 
-export default EventPage;
+export default withRouter(EventPage);

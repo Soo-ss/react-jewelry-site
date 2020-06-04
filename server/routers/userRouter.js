@@ -10,6 +10,8 @@ const userRouter = express.Router();
 
 userRouter.post("/register", postRegister);
 userRouter.post("/login", postLogin);
+
+// need to auth
 userRouter.get("/auth", auth, getAuth);
 userRouter.get("/logout", auth, getLogout);
 

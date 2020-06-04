@@ -3,6 +3,7 @@ import aboutFHD from "../../images/aboutFHD.png";
 import designer from "../../images/designer.jpg";
 import momento9 from "../../images/momento9.jpeg";
 import img02 from "../../images/img02.jpg";
+import { withRouter } from "react-router-dom";
 
 function AboutPage() {
   return (
@@ -208,4 +209,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default withRouter(AboutPage);
