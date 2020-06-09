@@ -10,7 +10,7 @@ import momento6 from "../../images/momento6.jpeg";
 import momento7 from "../../images/momento7.jpeg";
 import graceful from "../../images/graceful.jpg";
 import dprincess from "../../images/dPrincess.jpg";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 
 function CollectionPage() {
   return (
@@ -29,7 +29,7 @@ function CollectionPage() {
                 <h1 className="main-heading">Collection</h1>
                 <ul className="list-unstyled breadcrumbs">
                   <li>
-                    <a href="home.html">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>shop</li>
                 </ul>
@@ -46,25 +46,25 @@ function CollectionPage() {
             <div className="col-xs-12">
               <ul className="list-unstyled filter-list">
                 <li className="active">
-                  <a href="#">all</a>
+                  <a href="/">all</a>
                 </li>
                 <li>
-                  <a href="#" data-filter=".momento">
+                  <a href="/" data-filter=".momento">
                     momento
                   </a>
                 </li>
                 <li>
-                  <a href="#" data-filter=".dvivo">
+                  <a href="/" data-filter=".dvivo">
                     dvivo
                   </a>
                 </li>
                 <li>
-                  <a href="#" data-filter=".heartbeat">
+                  <a href="/" data-filter=".heartbeat">
                     heartbeat
                   </a>
                 </li>
                 <li>
-                  <a href="#" data-filter=".set">
+                  <a href="/" data-filter=".set">
                     set
                   </a>
                 </li>
@@ -84,7 +84,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -105,7 +105,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -126,7 +126,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -147,7 +147,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -189,7 +189,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -210,7 +210,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -231,7 +231,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -252,7 +252,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -273,7 +273,7 @@ function CollectionPage() {
                   <del>150$</del> 120$
                 </strong>
               </div>
-              <a className="like" href="#">
+              <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
             </div>
@@ -288,19 +288,19 @@ function CollectionPage() {
             <div className="pagination-holder">
               <ul className="list-unstyled pagination text-center">
                 <li className="slick-prev slick-arrow">
-                  <a className="icon-left-arrow" href="#" />
+                  <a className="icon-left-arrow" href="/" />
                 </li>
                 <li>
-                  <a href="#">01</a>
+                  <a href="/">01</a>
                 </li>
                 <li>
-                  <a href="#">02</a>
+                  <a href="/">02</a>
                 </li>
                 <li className="slick-active">
-                  <a href="#">03</a>
+                  <a href="/">03</a>
                 </li>
                 <li className="slick-prev slick-arrow">
-                  <a className="icon-right-arrow" href="#" />
+                  <a className="icon-right-arrow" href="/" />
                 </li>
               </ul>
             </div>
@@ -316,4 +316,4 @@ function CollectionPage() {
   );
 }
 
-export default withRouter(CollectionPage);
+export default CollectionPage;

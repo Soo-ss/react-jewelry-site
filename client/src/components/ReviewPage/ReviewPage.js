@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 
 function ReviewPage() {
   return (
@@ -9,4 +9,4 @@ function ReviewPage() {
   );
 }
 
-export default withRouter(ReviewPage);
+export default ReviewPage;

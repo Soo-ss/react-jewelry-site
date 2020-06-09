@@ -5,7 +5,7 @@ import img02 from "../../../images/img02.jpg";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { USER_SERVER } from "../../../Config";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 
 function Header(props) {
   const user = useSelector((state) => state.user);
@@ -44,7 +44,7 @@ function Header(props) {
                 <nav id="nav">
                   <ul className="list-unstyled">
                     <li className="active">
-                      <a href="#">Intro</a>
+                      <a href="/">Intro</a>
                       <ul className="list-unstyled drop">
                         <li>
                           <a href="/about">About</a>
@@ -72,7 +72,7 @@ function Header(props) {
                   {/* social-networks of the page */}
                   <ul className="list-unstyled icon-list">
                     <li>
-                      <a className="btn-search" href="#">
+                      <a className="btn-search" href="/">
                         <i className="icon-search" />
                       </a>
                     </li>
@@ -107,7 +107,7 @@ function Header(props) {
                 <nav id="nav">
                   <ul className="list-unstyled">
                     <li className="active">
-                      <a href="#">Intro</a>
+                      <a href="/">Intro</a>
                       <ul className="list-unstyled drop">
                         <li>
                           <a href="/about">About</a>
@@ -127,7 +127,7 @@ function Header(props) {
                       <a href="/reservation">예약</a>
                     </li>
                     <li>
-                      <a href="#" onClick={logoutHandler}>
+                      <a href="/" onClick={logoutHandler}>
                         Logout
                       </a>
                     </li>
@@ -137,12 +137,12 @@ function Header(props) {
                   {/* social-networks of the page */}
                   <ul className="list-unstyled icon-list">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src={userImg} alt="images description" />
                       </a>
                     </li>
                     <li>
-                      <a className="btn-search" href="#">
+                      <a className="btn-search" href="/">
                         <i className="icon-search" />
                       </a>
                     </li>
@@ -157,4 +157,4 @@ function Header(props) {
   }
 }
 
-export default withRouter(Header);
+export default Header;

@@ -6,7 +6,7 @@ function Search() {
       <div className="holder">
         <div className="col">
           <div className="block-holder">
-            <a href="#" className="close-btn">
+            <a href="/" className="close-btn">
               <i className="icon-close" />
             </a>
             <form action="#" className="submit-form">

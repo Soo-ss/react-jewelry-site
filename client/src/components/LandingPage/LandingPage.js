@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import { withRouter } from "react-router-dom";
+import React from "react";
 
 function LandingPage(props) {
   return (
@@ -12,13 +10,13 @@ function LandingPage(props) {
           {/* social-networks of the page */}
           <ul className="list-unstyled social-network">
             <li className="facebook">
-              <a href="#" className="icon-facebook" />
+              <a href="/" className="icon-facebook" />
             </li>
             <li>
-              <a href="#" className="icon-twitter" />
+              <a href="/" className="icon-twitter" />
             </li>
             <li className="instagram">
-              <a href="#" className="icon-instagram" />
+              <a href="/" className="icon-instagram" />
             </li>
           </ul>
           {/* Main Slider of the page */}
@@ -156,7 +154,7 @@ function LandingPage(props) {
                         <del>150$</del> 120$
                       </strong>
                     </div>
-                    <a href="#" className="like">
+                    <a href="/" className="like">
                       <i className="icon-favorite" />
                       23
                     </a>
@@ -183,7 +181,7 @@ function LandingPage(props) {
                         <del>150$</del> 120$
                       </strong>
                     </div>
-                    <a href="#" className="like">
+                    <a href="/" className="like">
                       <i className="icon-favorite" />
                       23
                     </a>
@@ -212,7 +210,7 @@ function LandingPage(props) {
                         <del>150$</del> 120$
                       </strong>
                     </div>
-                    <a href="#" className="like">
+                    <a href="/" className="like">
                       <i className="icon-favorite" />
                       23
                     </a>
@@ -239,7 +237,7 @@ function LandingPage(props) {
                         <del>150$</del> 120$
                       </strong>
                     </div>
-                    <a href="#" className="like">
+                    <a href="/" className="like">
                       <i className="icon-favorite" />
                       23
                     </a>
@@ -266,7 +264,7 @@ function LandingPage(props) {
                         <del>150$</del> 120$
                       </strong>
                     </div>
-                    <a href="#" className="like">
+                    <a href="/" className="like">
                       <i className="icon-favorite" />
                       23
                     </a>
@@ -293,7 +291,7 @@ function LandingPage(props) {
                         <del>150$</del> 120$
                       </strong>
                     </div>
-                    <a href="#" className="like">
+                    <a href="/" className="like">
                       <i className="icon-favorite" />
                       23
                     </a>
@@ -393,4 +391,4 @@ function LandingPage(props) {
   );
 }
 
-export default withRouter(LandingPage);
+export default LandingPage;

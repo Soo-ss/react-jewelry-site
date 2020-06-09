@@ -3,7 +3,7 @@ import aboutFHD from "../../images/aboutFHD.png";
 import designer from "../../images/designer.jpg";
 import momento9 from "../../images/momento9.jpeg";
 import img02 from "../../images/img02.jpg";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 
 function AboutPage() {
   return (
@@ -21,7 +21,7 @@ function AboutPage() {
                 <h1 className="main-heading about">ABOUT US</h1>
                 <ul className="list-unstyled breadcrumbs">
                   <li>
-                    <a href="home.html">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>ABOUT US</li>
                 </ul>
@@ -52,7 +52,7 @@ function AboutPage() {
                   <li>Spendisse in orci enim pharetra, erat sed fermentum.</li>
                   <li>Pharetra, erat sed fermentum feugiat.</li>
                 </ul>
-                <a className="btn-more" href="#">
+                <a className="btn-more" href="/">
                   Read more <i className="icon-right-arrow" />
                 </a>
               </div>
@@ -100,7 +100,7 @@ function AboutPage() {
                     <img src={designer} alt="image description" />
                   </div>
                   <h4>
-                    <a href="#">Namhee Kim</a>
+                    <a href="/">Namhee Kim</a>
                   </h4>
                   <span className="sub-title">Jewelry designer</span>
                 </li>
@@ -109,7 +109,7 @@ function AboutPage() {
                     <img src={designer} alt="image description" />
                   </div>
                   <h4>
-                    <a href="#">Namhee Kim</a>
+                    <a href="/">Namhee Kim</a>
                   </h4>
                   <span className="sub-title">Jewelry designer</span>
                 </li>
@@ -118,7 +118,7 @@ function AboutPage() {
                     <img src={designer} alt="image description" />
                   </div>
                   <h4>
-                    <a href="#">Namhee Kim</a>
+                    <a href="/">Namhee Kim</a>
                   </h4>
                   <span className="sub-title">Jewelry designer</span>
                 </li>
@@ -127,7 +127,7 @@ function AboutPage() {
                     <img src={designer} alt="image description" />
                   </div>
                   <h4>
-                    <a href="#">Namhee Kim</a>
+                    <a href="/">Namhee Kim</a>
                   </h4>
                   <span className="sub-title">Jewelry designer</span>
                 </li>
@@ -209,4 +209,4 @@ function AboutPage() {
   );
 }
 
-export default withRouter(AboutPage);
+export default AboutPage;

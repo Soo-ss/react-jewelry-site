@@ -1,8 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import aboutFHD from "../../images/aboutFHD.png";
+import { useDispatch, useSelector } from "react-redux";
+import Axios from "axios";
 
-function ReservationPage() {
+function ReservationPage(props) {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
+  const [Phone, setPhone] = useState("");
+  const [Name, setName] = useState("");
+  const [WeddingDate, setWeddingDate] = useState("");
+  const [ReservationDate, setReservationDate] = useState("");
+
+  const onPhoneHandler = (e) => {
+    setPhone(e.currentTarget.value);
+  };
+
+  const onNameHandler = (e) => {
+    setName(e.currentTarget.value);
+  };
+
+  const onWeddingDateHandler = (e) => {
+    setWeddingDate(e.currentTarget.value);
+  };
+
+  const onReservationDateHandler = (e) => {
+    setReservationDate(e.currentTarget.value);
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
+    console.log(user.userData);
+    let info = {
+      creator: user.userData._id,
+      phone: Phone,
+      name: Name,
+      weddingDate: WeddingDate,
+      reservationDate: ReservationDate,
+    };
+
+    Axios.post("/api/reservation/postReservation", info).then((response) => {
+      if (response.data.success) {
+        alert("예약에 성공하셨습니다.");
+        props.history.push("/");
+        window.location.reload();
+      } else {
+        alert("error!!!");
+      }
+    });
+  };
+
   return (
     <main id="main">
       <section
@@ -17,10 +66,10 @@ function ReservationPage() {
                 <h1 className="main-heading heading">Reservation</h1>
                 <ul className="list-unstyled breadcrumbs">
                   <li>
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
-                    <a href="#">shop</a>
+                    <a href="/">shop</a>
                   </li>
                   <li>contact</li>
                 </ul>
@@ -55,19 +104,19 @@ function ReservationPage() {
                   </li>
                   <li>
                     <i className="icon icon-email"></i>
-                    <a className="txt" href="#">
+                    <a className="txt" href="/">
                       idonknow@youremail.com
                     </a>
                   </li>
                   <li>
                     <i className="icon icon-phone"></i>
-                    <a className="txt" href="#">
+                    <a className="txt" href="/">
                       055-282-3173
                     </a>
                   </li>
                   <li>
                     <i className="icon icon-printer"></i>
-                    <a className="txt" href="#">
+                    <a className="txt" href="/">
                       (00)-213 1879017 fax
                     </a>
                   </li>
@@ -86,7 +135,7 @@ function ReservationPage() {
             </div>
             <div className="holder">
               <h3>LEAVE A MESSAGE</h3>
-              <form className="contact-form">
+              <form className="contact-form" onSubmit={onSubmitHandler}>
                 <fieldset>
                   <div className="form-group">
                     <div className="col">
@@ -95,6 +144,8 @@ function ReservationPage() {
                         type="text"
                         placeholder="전화번호"
                         required="true"
+                        value={Phone}
+                        onChange={onPhoneHandler}
                       ></input>
                     </div>
                     <div className="col">
@@ -103,6 +154,8 @@ function ReservationPage() {
                         type="text"
                         placeholder="성함"
                         required="true"
+                        value={Name}
+                        onChange={onNameHandler}
                       ></input>
                     </div>
                   </div>
@@ -111,6 +164,8 @@ function ReservationPage() {
                       className="form-control"
                       type="date"
                       required="true"
+                      value={WeddingDate}
+                      onChange={onWeddingDateHandler}
                     ></input>
                   </div>
                   <div className="form-group">
@@ -118,6 +173,8 @@ function ReservationPage() {
                       className="form-control"
                       type="datetime-local"
                       required="true"
+                      value={ReservationDate}
+                      onChange={onReservationDateHandler}
                     ></input>
                   </div>
                   <button className="btn-primary btn-submit">예약하기</button>

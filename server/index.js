@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 import config from "./config/key";
 import userRouter from "./routers/userRouter";
+import reservationRouter from "./routers/reservationRouter";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -30,6 +31,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/users", userRouter);
+app.use("/api/reservation", reservationRouter);
 
 // production
 if (process.env.NODE_ENV === "production") {

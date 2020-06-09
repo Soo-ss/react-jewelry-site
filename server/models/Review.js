@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 // 데이터를 절대로 DB에 저장하지 않는다.
 // image의 link를 집어 넣는다.
@@ -28,6 +29,4 @@ const ReviewSchema = new mongoose.Schema({
 });
 
 const Review = mongoose.model("Review", ReviewSchema);
-module.exports = {
-  Review,
-};
+export default Review;

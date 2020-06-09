@@ -55,10 +55,10 @@ function LoginPage(props) {
                 <h1 className="main-heading heading-1">Login</h1>
                 <ul className="list-unstyled breadcrumbs">
                   <li>
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
-                    <a href="#">Collection</a>
+                    <a href="/">Collection</a>
                   </li>
                   <li>Login</li>
                 </ul>
@@ -92,7 +92,7 @@ function LoginPage(props) {
               ></input>
             </div>
             <div className="form-group">
-              <a href="#">Forget Password?</a>
+              <a href="/">Forget Password?</a>
               <button className="btn-primary btn-login">Login</button>
               <button className="btn-naver">네이버로그인</button>
             </div>
