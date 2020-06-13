@@ -33,7 +33,7 @@ function ReservationPage(props) {
     e.preventDefault();
 
     console.log(user.userData);
-    let info = {
+    const info = {
       creator: user.userData._id,
       phone: Phone,
       name: Name,
@@ -56,8 +56,7 @@ function ReservationPage(props) {
     <main id="main">
       <section
         className="banner"
-        style={{ backgroundImage: `url(${aboutFHD})` }}
-      >
+        style={{ backgroundImage: `url(${aboutFHD})` }}>
         <span className="sale-percent">Best of best</span>
         <div className="container">
           <div className="row">
@@ -89,8 +88,7 @@ function ReservationPage(props) {
             style={{ border: 0 }}
             allowFullScreen=""
             aria-hidden="false"
-            tabIndex="0"
-          ></iframe>
+            tabIndex="0"></iframe>
         </div>
         <div className="text-holder">
           <div className="txt-frame">
@@ -145,8 +143,7 @@ function ReservationPage(props) {
                         placeholder="전화번호"
                         required="true"
                         value={Phone}
-                        onChange={onPhoneHandler}
-                      ></input>
+                        onChange={onPhoneHandler}></input>
                     </div>
                     <div className="col">
                       <input
@@ -155,8 +152,7 @@ function ReservationPage(props) {
                         placeholder="성함"
                         required="true"
                         value={Name}
-                        onChange={onNameHandler}
-                      ></input>
+                        onChange={onNameHandler}></input>
                     </div>
                   </div>
                   <div className="form-group">
@@ -165,8 +161,7 @@ function ReservationPage(props) {
                       type="date"
                       required="true"
                       value={WeddingDate}
-                      onChange={onWeddingDateHandler}
-                    ></input>
+                      onChange={onWeddingDateHandler}></input>
                   </div>
                   <div className="form-group">
                     <input
@@ -174,8 +169,7 @@ function ReservationPage(props) {
                       type="datetime-local"
                       required="true"
                       value={ReservationDate}
-                      onChange={onReservationDateHandler}
-                    ></input>
+                      onChange={onReservationDateHandler}></input>
                   </div>
                   <button className="btn-primary btn-submit">예약하기</button>
                 </fieldset>
