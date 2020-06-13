@@ -86,7 +86,7 @@ function RegisterPage(props) {
                 className="form-control"
                 type="email"
                 placeholder="Email"
-                required="true"
+                required={true}
                 value={Email}
                 onChange={onEmailHandler}
               ></input>
@@ -96,7 +96,7 @@ function RegisterPage(props) {
                 className="form-control"
                 type="text"
                 placeholder="Name"
-                required="true"
+                required={true}
                 value={Name}
                 onChange={onNameHandler}
               ></input>
@@ -106,7 +106,7 @@ function RegisterPage(props) {
                 className="form-control"
                 type="password"
                 placeholder="Password"
-                required="true"
+                required={true}
                 value={Password}
                 onChange={onPasswordHandler}
               ></input>
@@ -116,7 +116,7 @@ function RegisterPage(props) {
                 className="form-control"
                 type="password"
                 placeholder="ConfirmPassword"
-                required="true"
+                required={true}
                 value={ConfirmPassword}
                 onChange={onConfirmPasswordHandler}
               ></input>

@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function LandingPage(props) {
+  // 뒤로가기 버튼 누르면 이펙트 활성화가 안돼서 이렇게 해준다
+  // init third party JS files
+  useEffect(() => {
+    let one = document.createElement("script");
+    let two = document.createElement("script");
+    let three = document.createElement("script");
+
+    // hook sources
+    one.src = `${process.env.PUBLIC_URL}/js/jq.js`;
+    two.src = `${process.env.PUBLIC_URL}/js/plugins.js`;
+    three.src = `${process.env.PUBLIC_URL}/js/init.js`;
+
+    // persist order of loading
+    one.async = false;
+    two.async = false;
+    three.async = false;
+
+    // append to index.html
+    document.body.appendChild(one);
+    document.body.appendChild(two);
+    document.body.appendChild(three);
+
+    // do clean ups
+    return () => {
+      document.body.removeChild(one);
+      document.body.removeChild(two);
+      document.body.removeChild(three);
+    };
+  }, []);
   return (
     <>
       {/* contain main informative part of the site */}

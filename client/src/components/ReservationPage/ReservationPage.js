@@ -56,7 +56,8 @@ function ReservationPage(props) {
     <main id="main">
       <section
         className="banner"
-        style={{ backgroundImage: `url(${aboutFHD})` }}>
+        style={{ backgroundImage: `url(${aboutFHD})` }}
+      >
         <span className="sale-percent">Best of best</span>
         <div className="container">
           <div className="row">
@@ -88,7 +89,8 @@ function ReservationPage(props) {
             style={{ border: 0 }}
             allowFullScreen=""
             aria-hidden="false"
-            tabIndex="0"></iframe>
+            tabIndex="0"
+          ></iframe>
         </div>
         <div className="text-holder">
           <div className="txt-frame">
@@ -141,35 +143,39 @@ function ReservationPage(props) {
                         className="form-control"
                         type="text"
                         placeholder="전화번호"
-                        required="true"
+                        required={true}
                         value={Phone}
-                        onChange={onPhoneHandler}></input>
+                        onChange={onPhoneHandler}
+                      ></input>
                     </div>
                     <div className="col">
                       <input
                         className="form-control"
                         type="text"
                         placeholder="성함"
-                        required="true"
+                        required={true}
                         value={Name}
-                        onChange={onNameHandler}></input>
+                        onChange={onNameHandler}
+                      ></input>
                     </div>
                   </div>
                   <div className="form-group">
                     <input
                       className="form-control"
                       type="date"
-                      required="true"
+                      required={true}
                       value={WeddingDate}
-                      onChange={onWeddingDateHandler}></input>
+                      onChange={onWeddingDateHandler}
+                    ></input>
                   </div>
                   <div className="form-group">
                     <input
                       className="form-control"
                       type="datetime-local"
-                      required="true"
+                      required={true}
                       value={ReservationDate}
-                      onChange={onReservationDateHandler}></input>
+                      onChange={onReservationDateHandler}
+                    ></input>
                   </div>
                   <button className="btn-primary btn-submit">예약하기</button>
                 </fieldset>

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import aboutFHD from "../../images/aboutFHD.png";
 import { withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Axios from "axios";
 
-function ReviewPage() {
+function ReviewPage(props) {
   const user = useSelector((state) => state.user);
 
   const [Title, setTitle] = useState("");
@@ -42,13 +42,14 @@ function ReviewPage() {
     <main id="main">
       <section
         className="banner"
-        style={{ backgroundImage: `url(${aboutFHD})` }}>
+        style={{ backgroundImage: `url(${aboutFHD})` }}
+      >
         <span className="sale-percent">Best of best</span>
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
               <div className="caption">
-                <h1 className="main-heading heading">Reservation</h1>
+                <h1 className="main-heading heading">Review</h1>
                 <ul className="list-unstyled breadcrumbs">
                   <li>
                     <a href="/">Home</a>
@@ -75,21 +76,23 @@ function ReviewPage() {
                   className="form-control"
                   type="text"
                   placeholder="제목"
-                  required="true"
+                  required={true}
                   value={Title}
-                  onChange={onTitle}></input>
+                  onChange={onTitle}
+                ></input>
               </div>
               <div className="col">
                 <textarea
                   className="form-control"
                   type="text"
                   placeholder="설명"
-                  required="true"
+                  required={true}
                   value={Desc}
-                  onChange={onDesc}></textarea>
+                  onChange={onDesc}
+                ></textarea>
               </div>
             </div>
-            <button className="btn-primary btn-submit">예약하기</button>
+            <button className="btn-primary btn-submit">확인</button>
           </fieldset>
         </form>
       </div>

@@ -76,7 +76,7 @@ function LoginPage(props) {
                 className="form-control"
                 type="email"
                 placeholder="Email"
-                required="true"
+                required={true}
                 value={Email}
                 onChange={onEmailHandler}
               ></input>
@@ -86,7 +86,7 @@ function LoginPage(props) {
                 className="form-control"
                 type="password"
                 placeholder="Password"
-                required="true"
+                required={true}
                 value={Password}
                 onChange={onPasswordHandler}
               ></input>
