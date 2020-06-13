@@ -29,6 +29,12 @@ const userSchema = mongoose.Schema({
   tokenExp: {
     type: Number,
   },
+  reviews: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
   phone: String,
   myName: String,
   weddingDate: Date,
