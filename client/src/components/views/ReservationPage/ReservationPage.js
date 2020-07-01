@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import aboutFHD from "../../images/aboutFHD.png";
+import aboutFHD from "../../../images/aboutFHD.png";
 import { useDispatch, useSelector } from "react-redux";
 import Axios from "axios";
 

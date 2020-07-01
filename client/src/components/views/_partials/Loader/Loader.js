@@ -1,5 +1,5 @@
 import React from "react";
-import svg from "../../../images/svg/rings.svg";
+import svg from "../../../../images/svg/rings.svg";
 
 function Loader() {
   return (

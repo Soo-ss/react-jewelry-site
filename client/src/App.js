@@ -1,9 +1,9 @@
 // 라우팅 관련 일을 처리한다.
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import LandingPage from "./components/LandingPage/LandingPage";
-import LoginPage from "./components/LoginPage/LoginPage";
-import RegisterPage from "./components/RegisterPage/RegisterPage";
+import LandingPage from "./components/views/LandingPage/LandingPage";
+import LoginPage from "./components/views/LoginPage/LoginPage";
+import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import Auth from "./hoc/auth";
 import "./scss/bootstrap.scss";
 import "./scss/fonts.scss";
@@ -11,16 +11,17 @@ import "./scss/animate.scss";
 import "./scss/slick.scss";
 import "./style.scss";
 import "./scss/color.scss";
-import Loader from "./components/_partials/Loader/Loader";
-import Header from "./components/_partials/Header/Header";
-import Footer from "./components/_partials/Footer/Footer";
-import Search from "./components/_partials/Search/Search";
-import BackTop from "./components/_partials/BackTop/BackTop";
-import AboutPage from "./components/AboutPage/AboutPage";
-import CollectionPage from "./components/CollectionPage/CollectionPage";
-import EventPage from "./components/EventPage/EventPage";
-import ReservationPage from "./components/ReservationPage/ReservationPage";
-import ReviewPage from "./components/ReviewPage/ReviewPage";
+import Loader from "./components/views/_partials/Loader/Loader";
+import Header from "./components/views/_partials/Header/Header";
+import Footer from "./components/views/_partials/Footer/Footer";
+import Search from "./components/views/_partials/Search/Search";
+import BackTop from "./components/views/_partials/BackTop/BackTop";
+import AboutPage from "./components/views/AboutPage/AboutPage";
+import CollectionPage from "./components/views/CollectionPage/CollectionPage";
+import EventPage from "./components/views/EventPage/EventPage";
+import ReservationPage from "./components/views/ReservationPage/ReservationPage";
+import ReviewPage from "./components/views/ReviewPage/ReviewPage";
+import UploadReviewPage from "./components/views/UploadReviewPage/UploadReviewPage";
 
 function App() {
   // init third party JS files
@@ -81,6 +82,11 @@ function App() {
               exact
               path="/reservation"
               component={Auth(ReservationPage, true)}
+            />
+            <Route
+              exact
+              path="/uploadReview"
+              component={Auth(UploadReviewPage, true)}
             />
             <Route exact path="/review" component={Auth(ReviewPage, null)} />
           </Switch>

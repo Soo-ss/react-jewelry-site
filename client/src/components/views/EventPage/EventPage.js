@@ -1,9 +1,9 @@
 import React from "react";
-import eventBG from "../../images/eventBG.jpg";
-import newYear from "../../images/2020.jpg";
-import review from "../../images/review.jpg";
-import plusFriend from "../../images/plusFriend.jpg";
-import reviewBG from "../../images/reviewBG.jpg";
+import eventBG from "../../../images/eventBG.jpg";
+import newYear from "../../../images/2020.jpg";
+import review from "../../../images/review.jpg";
+import plusFriend from "../../../images/plusFriend.jpg";
+import reviewBG from "../../../images/reviewBG.jpg";
 // import { withRouter } from "react-router-dom";
 
 function EventPage() {

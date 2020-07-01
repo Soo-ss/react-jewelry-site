@@ -33,7 +33,7 @@ mongoose
 
 app.use("/api/users", userRouter);
 app.use("/api/reservation", reservationRouter);
-app.use("api/review", reviewRouter);
+app.use("/api/review", reviewRouter);
 
 // Handle React routing, return all requests to React app
 app.get("*", (req, res) => {

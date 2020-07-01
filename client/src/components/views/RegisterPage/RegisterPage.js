@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { registerUser } from "../../_actions/userAction";
-import aboutFHD from "../../images/aboutFHD.png";
+import { registerUser } from "../../../_actions/userAction";
+import aboutFHD from "../../../images/aboutFHD.png";
 // import { withRouter } from "react-router-dom";
 
 function RegisterPage(props) {

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../_actions/userAction";
+import { loginUser } from "../../../_actions/userAction";
 import { withRouter } from "react-router-dom";
-import aboutFHD from "../../images/aboutFHD.png";
+import aboutFHD from "../../../images/aboutFHD.png";
 import "./loginStyle.scss";
 
 function LoginPage(props) {

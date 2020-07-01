@@ -71,6 +71,7 @@ export const postLogin = (req, res) => {
 // 순서대로 수행된다.
 export const getAuth = (req, res) => {
   // 여기까지 미들웨어를 통과 해 왔다는 말은 Authentication이 true라는 뜻이다.
+  // console.log("=====getAuth=====\n", req.user);
   res.status(200).json({
     // 원하는 정보만 선택해서 저장 가능하다.
     _id: req.user._id,
@@ -80,7 +81,7 @@ export const getAuth = (req, res) => {
     name: req.user.name,
     lastname: req.user.lastname,
     role: req.user.role,
-    image: req.user.image,
+    reviews: req.user.reviews,
   });
 };
 

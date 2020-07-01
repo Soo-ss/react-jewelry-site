@@ -1,15 +1,15 @@
 import React from "react";
-import collectionBG from "../../images/collectionBG.jpg";
-import img46 from "../../images/img46.jpg";
-import momento1 from "../../images/momento1.jpeg";
-import momento2 from "../../images/momento2.jpeg";
-import momento3 from "../../images/momento3.jpeg";
-import momento4 from "../../images/momento4.jpeg";
-import momento5 from "../../images/momento5.jpeg";
-import momento6 from "../../images/momento6.jpeg";
-import momento7 from "../../images/momento7.jpeg";
-import graceful from "../../images/graceful.jpg";
-import dprincess from "../../images/dPrincess.jpg";
+import collectionBG from "../../../images/collectionBG.jpg";
+import img46 from "../../../images/img46.jpg";
+import momento1 from "../../../images/momento1.jpeg";
+import momento2 from "../../../images/momento2.jpeg";
+import momento3 from "../../../images/momento3.jpeg";
+import momento4 from "../../../images/momento4.jpeg";
+import momento5 from "../../../images/momento5.jpeg";
+import momento6 from "../../../images/momento6.jpeg";
+import momento7 from "../../../images/momento7.jpeg";
+import graceful from "../../../images/graceful.jpg";
+import dprincess from "../../../images/dPrincess.jpg";
 // import { withRouter } from "react-router-dom";
 
 function CollectionPage() {
@@ -46,25 +46,25 @@ function CollectionPage() {
             <div className="col-xs-12">
               <ul className="list-unstyled filter-list">
                 <li className="active">
-                  <a href="/">all</a>
+                  <a href="#">all</a>
                 </li>
                 <li>
-                  <a href="/" data-filter=".momento">
+                  <a href="#" data-filter=".momento">
                     momento
                   </a>
                 </li>
                 <li>
-                  <a href="/" data-filter=".dvivo">
+                  <a href="#" data-filter=".dvivo">
                     dvivo
                   </a>
                 </li>
                 <li>
-                  <a href="/" data-filter=".heartbeat">
+                  <a href="#" data-filter=".heartbeat">
                     heartbeat
                   </a>
                 </li>
                 <li>
-                  <a href="/" data-filter=".set">
+                  <a href="#" data-filter=".set">
                     set
                   </a>
                 </li>

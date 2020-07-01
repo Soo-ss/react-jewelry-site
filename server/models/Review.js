@@ -5,10 +5,12 @@ import mongoose from "mongoose";
 // image의 link를 집어 넣는다.
 // amazon에 image저장
 const ReviewSchema = new mongoose.Schema({
-  fileUrl: {
-    type: String,
-    required: "File URL is required",
-  },
+  fileUrl: [
+    {
+      type: String,
+      required: "File URL is required",
+    },
+  ],
   title: {
     type: String,
     required: "Title is required",

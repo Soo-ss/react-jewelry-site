@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import aboutFHD from "../../images/aboutFHD.png";
+import aboutFHD from "../../../images/aboutFHD.png";
 import { withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 
 function ReviewPage(props) {
@@ -52,12 +53,8 @@ function ReviewPage(props) {
                 <h1 className="main-heading heading">Review</h1>
                 <ul className="list-unstyled breadcrumbs">
                   <li>
-                    <a href="/">Home</a>
+                    <Link to="/uploadReview">리뷰 쓰기</Link>
                   </li>
-                  <li>
-                    <a href="/">shop</a>
-                  </li>
-                  <li>contact</li>
                 </ul>
               </div>
             </div>
@@ -68,33 +65,6 @@ function ReviewPage(props) {
 
       <div className="holder">
         <h3>LEAVE A MESSAGE</h3>
-        <form className="contact-form" onSubmit={onSubmit}>
-          <fieldset>
-            <div className="form-group">
-              <div className="col">
-                <input
-                  className="form-control"
-                  type="text"
-                  placeholder="제목"
-                  required={true}
-                  value={Title}
-                  onChange={onTitle}
-                ></input>
-              </div>
-              <div className="col">
-                <textarea
-                  className="form-control"
-                  type="text"
-                  placeholder="설명"
-                  required={true}
-                  value={Desc}
-                  onChange={onDesc}
-                ></textarea>
-              </div>
-            </div>
-            <button className="btn-primary btn-submit">확인</button>
-          </fieldset>
-        </form>
       </div>
     </main>
   );

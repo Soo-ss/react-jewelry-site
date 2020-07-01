@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "../../../images/logo.png";
-import userImg from "../../../images/user.png";
+import logo from "../../../../images/logo.png";
+import userImg from "../../../../images/user.png";
 // import img02 from "../../../images/img02.jpg";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { USER_SERVER } from "../../../Config";
+import { USER_SERVER } from "../../../../Config";
 // import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
