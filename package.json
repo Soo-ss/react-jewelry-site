@@ -1,32 +1,32 @@
 {
-  "name": "my-boiler-plate",
-  "version": "1.0.0",
-  "scripts": {
-    "build:server": "babel server --out-dir buildServer",
-    "client": "cd client && yarn start",
-    "server": "nodemon --exec babel-node server/index.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node buildServer/index.js",
-    "heroku-postbuild": "npm run build:server && cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
-  },
-  "dependencies": {
-    "@babel/node": "7.8.7",
-    "@babel/preset-env": "7.10.0",
-    "aws-sdk": "2.704.0",
-    "bcrypt": "4.0.1",
-    "body-parser": "^1.18.3",
-    "cookie-parser": "1.4.5",
-    "cors": "2.8.5",
-    "express": "^4.16.4",
-    "jsonwebtoken": "8.5.1",
-    "mongoose": "5.9.15",
-    "morgan": "1.10.0",
-    "multer": "1.4.2",
-    "multer-s3": "2.9.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "7.10.0",
-    "@babel/core": "7.10.0",
-    "concurrently": "^4.0.1"
-  }
+    "name": "my-boiler-plate",
+    "version": "1.0.0",
+    "scripts": {
+        "build:server": "babel server --out-dir buildServer",
+        "client": "cd client && yarn start",
+        "server": "nodemon --exec babel-node server/index.js",
+        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+        "start": "node buildServer/index.js",
+        "heroku-postbuild": "npm run build:server && cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    },
+    "dependencies": {
+        "@babel/node": "7.8.7",
+        "@babel/preset-env": "7.10.0",
+        "aws-sdk": "2.704.0",
+        "bcrypt": "4.0.1",
+        "body-parser": "^1.18.3",
+        "cookie-parser": "1.4.5",
+        "cors": "2.8.5",
+        "express": "^4.16.4",
+        "jsonwebtoken": "8.5.1",
+        "mongoose": "5.9.15",
+        "morgan": "1.10.0",
+        "multer": "1.4.2",
+        "multer-s3": "2.9.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "7.10.0",
+        "@babel/core": "7.10.0",
+        "concurrently": "^4.0.1"
+    }
 }

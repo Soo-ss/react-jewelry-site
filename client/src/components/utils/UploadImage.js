@@ -69,7 +69,7 @@ function UploadImage(props) {
             <img
               style={{ minWidth: "300px", width: "300px", height: "240px" }}
               src={`${image}`}
-              alt={`productImg-${index}`}
+              alt={`reviewImg-${index}`}
             />
           </div>
         ))}

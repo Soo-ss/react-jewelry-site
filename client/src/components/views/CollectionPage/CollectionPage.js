@@ -46,27 +46,19 @@ function CollectionPage() {
             <div className="col-xs-12">
               <ul className="list-unstyled filter-list">
                 <li className="active">
-                  <a href="#">all</a>
+                  <a>all</a>
                 </li>
                 <li>
-                  <a href="#" data-filter=".momento">
-                    momento
-                  </a>
+                  <a data-filter=".momento">momento</a>
                 </li>
                 <li>
-                  <a href="#" data-filter=".dvivo">
-                    dvivo
-                  </a>
+                  <a data-filter=".dvivo">dvivo</a>
                 </li>
                 <li>
-                  <a href="#" data-filter=".heartbeat">
-                    heartbeat
-                  </a>
+                  <a data-filter=".heartbeat">heartbeat</a>
                 </li>
                 <li>
-                  <a href="#" data-filter=".set">
-                    set
-                  </a>
+                  <a data-filter=".set">set</a>
                 </li>
               </ul>
             </div>

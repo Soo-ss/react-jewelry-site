@@ -80,3 +80,49 @@ export const uploadReview = async (req, res) => {
     });
   }
 };
+
+export const getReviews = (req, res) => {
+  let order = req.body.order ? req.body.order : "desc";
+  let sortBy = req.body.sortBy ? req.body.sortBy : "_id";
+  let limit = req.body.limit ? parseInt(req.body.limit) : 100;
+  let skip = parseInt(req.body.skip);
+
+  Review.find()
+    .populate("creator")
+    .sort([[sortBy, order]])
+    .skip(skip)
+    .limit(limit)
+    .exec((err, reviews) => {
+      if (err) {
+        return res.status(400).json({
+          success: false,
+          err,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        reviews,
+        postSize: reviews.length,
+      });
+    });
+};
+
+// /api/review/reviews_by_id?id=${reviewID}&type=single
+export const reviewDetail = (req, res) => {
+  let type = req.query.type;
+  let reviewIDs = req.query.id;
+
+  if (type === "array") {
+  }
+
+  // we need to find the review information that belong to review id
+
+  Review.find({ _id: { $in: reviewIDs } })
+    .populate("creator")
+    .exec((err, review) => {
+      if (err) {
+        return res.status(400).send(err);
+      }
+      return res.status(200).send(review);
+    });
+};

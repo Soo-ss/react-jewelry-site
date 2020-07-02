@@ -1,43 +1,71 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import aboutFHD from "../../../images/aboutFHD.png";
 import { withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import { Icon, Row, Col, Card } from "antd";
+import ImageSlider from "../../utils/ImageSlider";
+import "./reviewPage.scss";
+
+const { Meta } = Card;
 
 function ReviewPage(props) {
-  const user = useSelector((state) => state.user);
+  const [Reviews, setReviews] = useState([]);
+  const [Skip, setSkip] = useState(0);
+  const [Limit, setLimit] = useState(8);
+  const [PostSize, setPostSize] = useState();
 
-  const [Title, setTitle] = useState("");
-  const [Desc, setDesc] = useState("");
-
-  const onTitle = (e) => {
-    setTitle(e.currentTarget.value);
-  };
-
-  const onDesc = (e) => {
-    setDesc(e.currentTarget.value);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
+  useEffect(() => {
     const info = {
-      creator: user.userData._id,
-      title: Title,
-      desc: Desc,
+      skip: Skip,
+      limit: Limit,
     };
 
-    Axios.post("/api/review/uploadReview", info).then((response) => {
+    getReviews(info);
+  }, []); // 빈 배열을 주면 한번만 실행되는듯?
+
+  const getReviews = () => {
+    Axios.post("/api/review/getReviews").then((response) => {
       if (response.data.success) {
-        alert("리뷰를 등록하셨습니다.");
-        props.history.push("/");
-        window.location.reload();
+        setReviews([...Reviews, ...response.data.reviews]);
+        setPostSize(response.data.postSize);
+        // console.log(response.data.reviews);
       } else {
-        alert("error!!!");
+        alert("error!! (ReviewPage)");
       }
     });
   };
+
+  const onLoadMore = () => {
+    let skip = Skip + Limit;
+
+    const info = {
+      skip: skip,
+      limit: Limit,
+    };
+
+    getReviews(info);
+    setSkip(skip);
+  };
+
+  // responsive
+  const renderCards = Reviews.map((review, index) => {
+    return (
+      <Col lg={6} md={8} xs={24}>
+        <Card
+          hoverable={true}
+          cover={
+            <Link to={`/review/${review._id}`}>
+              <ImageSlider images={review.fileUrl} />
+            </Link>
+          }
+        >
+          <Meta title={review.title} description={review.description} />
+        </Card>
+      </Col>
+    );
+  });
 
   return (
     <main id="main">
@@ -64,7 +92,38 @@ function ReviewPage(props) {
       </section>
 
       <div className="holder">
-        <h3>LEAVE A MESSAGE</h3>
+        <div style={{ width: "75%", margin: "3rem auto" }}>
+          <div style={{ textAlign: "center" }}>
+            <h2>
+              All Lists <Icon type="rocket" />
+            </h2>
+          </div>
+
+          {Reviews.length === 0 ? (
+            <div
+              style={{
+                display: "flex",
+                height: "300px",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <h2>No post yet...</h2>
+            </div>
+          ) : (
+            <div>
+              <Row gutter={[16, 16]}>{renderCards}</Row>
+            </div>
+          )}
+          <br />
+          <br />
+
+          {PostSize >= Limit && (
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <button onClick={onLoadMore}>Load More</button>
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );

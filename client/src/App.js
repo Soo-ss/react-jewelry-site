@@ -1,16 +1,16 @@
 // 라우팅 관련 일을 처리한다.
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import LandingPage from "./components/views/LandingPage/LandingPage";
-import LoginPage from "./components/views/LoginPage/LoginPage";
-import RegisterPage from "./components/views/RegisterPage/RegisterPage";
-import Auth from "./hoc/auth";
 import "./scss/bootstrap.scss";
 import "./scss/fonts.scss";
 import "./scss/animate.scss";
 import "./scss/slick.scss";
 import "./style.scss";
 import "./scss/color.scss";
+import LandingPage from "./components/views/LandingPage/LandingPage";
+import LoginPage from "./components/views/LoginPage/LoginPage";
+import RegisterPage from "./components/views/RegisterPage/RegisterPage";
+import Auth from "./hoc/auth";
 import Loader from "./components/views/_partials/Loader/Loader";
 import Header from "./components/views/_partials/Header/Header";
 import Footer from "./components/views/_partials/Footer/Footer";
@@ -22,6 +22,7 @@ import EventPage from "./components/views/EventPage/EventPage";
 import ReservationPage from "./components/views/ReservationPage/ReservationPage";
 import ReviewPage from "./components/views/ReviewPage/ReviewPage";
 import UploadReviewPage from "./components/views/UploadReviewPage/UploadReviewPage";
+import ReviewDetailPage from "./components/views/ReviewDetailPage/ReviewDetailPage";
 
 function App() {
   // init third party JS files
@@ -89,6 +90,11 @@ function App() {
               component={Auth(UploadReviewPage, true)}
             />
             <Route exact path="/review" component={Auth(ReviewPage, null)} />
+            <Route
+              exact
+              path="/review/:reviewID"
+              component={Auth(ReviewDetailPage, null)}
+            />
           </Switch>
         </Router>
         <BackTop />

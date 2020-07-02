@@ -28,6 +28,10 @@ function UploadReviewPage(props) {
   const onSubmit = (e) => {
     e.preventDefault();
 
+    if (!Title || !Desc || !Images) {
+      return alert("모든 값을 채워 주세요");
+    }
+
     const info = {
       creator: user.userData._id,
       title: Title,
@@ -35,12 +39,12 @@ function UploadReviewPage(props) {
       images: Images,
     };
 
-    console.log(info);
+    // console.log(info);
 
     Axios.post("/api/review/uploadReview", info).then((response) => {
       if (response.data.success) {
         alert("리뷰를 등록하셨습니다.");
-        props.history.push("/");
+        props.history.push("/review");
         window.location.reload();
       } else {
         alert("error!!!(UploadReviewPage)");
@@ -72,13 +76,13 @@ function UploadReviewPage(props) {
       </section>
 
       <div className="holder">
-        <h3>LEAVE A MESSAGE</h3>
+        <h3 style={{ textAlign: "center" }}>LEAVE A MESSAGE</h3>
         <form
           className="contact-form"
           // encType="multipart/form-data"
           onSubmit={onSubmit}
         >
-          <fieldset>
+          <fieldset style={{ maxWidth: "700px", margin: "2rem auto" }}>
             <div className="form-group">
               <div className="col">
                 <UploadImage refreshFunction={updateImages} />
