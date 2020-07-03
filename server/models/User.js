@@ -1,4 +1,4 @@
-import passportLocalMongoose from "passport-local-mongoose";
+// import passportLocalMongoose from "passport-local-mongoose";
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
@@ -142,9 +142,9 @@ userSchema.statics.findByToken = function (token, cb) {
   });
 };
 
-userSchema.plugin(passportLocalMongoose, {
-  usernameField: "email",
-});
+// userSchema.plugin(passportLocalMongoose, {
+//   usernameField: "email",
+// });
 
 // 스키마를 모델로 감싸준다.
 const User = mongoose.model("User", userSchema);
