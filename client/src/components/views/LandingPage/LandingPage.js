@@ -1,4 +1,13 @@
 import React, { useEffect } from "react";
+import landingImage from "../../../images/main.png";
+import areaHand2 from "../../../images/areaHand2.jpg";
+import dVivo from "../../../images/dVivo.jpeg";
+import dVivoMain from "../../../images/dVivoMain.jpeg";
+import dVivoCube from "../../../images/dVivoCube.jpeg";
+import dVivoSimple from "../../../images/dVivoSimple.jpeg";
+import momento1 from "../../../images/momento1.jpeg";
+import momento2 from "../../../images/momento2.jpeg";
+import kakao from "../../../images/kakao2.png";
 
 function LandingPage(props) {
   // 뒤로가기 버튼 누르면 이펙트 활성화가 안돼서 이렇게 해준다
@@ -57,12 +66,9 @@ function LandingPage(props) {
                   <div className="col-xs-12">
                     <div className="beans-slider">
                       <div className="border">
-                        <h1 className="slider-heading">Back to dream</h1>
+                        <h1 className="slider-heading">Design Beyond Time</h1>
                         <div className="img-holder">
-                          <img
-                            src="http://placehold.it/440x660"
-                            alt="image description"
-                          />
+                          <img src={landingImage} alt="image description" />
                         </div>
                       </div>
                     </div>
@@ -77,12 +83,9 @@ function LandingPage(props) {
                   <div className="col-xs-12">
                     <div className="beans-slider">
                       <div className="border">
-                        <h1 className="slider-heading">Back to dream</h1>
+                        <h1 className="slider-heading">Design Beyond Time</h1>
                         <div className="img-holder">
-                          <img
-                            src="http://placehold.it/440x660"
-                            alt="image description"
-                          />
+                          <img src={landingImage} alt="image description" />
                         </div>
                       </div>
                     </div>
@@ -97,12 +100,9 @@ function LandingPage(props) {
                   <div className="col-xs-12">
                     <div className="beans-slider">
                       <div className="border">
-                        <h1 className="slider-heading">Back to dream</h1>
+                        <h1 className="slider-heading">Design Beyond Time</h1>
                         <div className="img-holder">
-                          <img
-                            src="http://placehold.it/440x660"
-                            alt="image description"
-                          />
+                          <img src={landingImage} alt="image description" />
                         </div>
                       </div>
                     </div>
@@ -116,7 +116,7 @@ function LandingPage(props) {
         <section
           className="banner banner-2 wow fadeInUp"
           data-wow-delay="0.4s"
-          style={{ backgroundImage: "url(http://placehold.it/1920x1000)" }}
+          style={{ backgroundImage: `url(${areaHand2})` }}
         >
           <span className="sale-percent">Tel: (02)123 4567</span>
           <div className="container">
@@ -140,10 +140,7 @@ function LandingPage(props) {
                     </a>
                   </div>
                   <div className="img-holder">
-                    <img
-                      src="http://placehold.it/390x330"
-                      alt="image description"
-                    />
+                    <img src={dVivo} alt="image description" />
                   </div>
                 </div>
               </div>
@@ -193,7 +190,7 @@ function LandingPage(props) {
               <img
                 className="img-responsive"
                 alt="image description"
-                src="http://placehold.it/480x620"
+                src={dVivoMain}
               />
             </div>
             {/* product-block of the page */}
@@ -220,7 +217,7 @@ function LandingPage(props) {
               <img
                 className="img-responsive"
                 alt="image description"
-                src="http://placehold.it/480x620"
+                src={dVivoCube}
               />
             </div>
           </div>
@@ -249,7 +246,7 @@ function LandingPage(props) {
               <img
                 className="img-responsive"
                 alt="image description"
-                src="http://placehold.it/960x1235"
+                src={dVivo}
               />
             </div>
             {/* product-block of the page */}
@@ -276,7 +273,7 @@ function LandingPage(props) {
               <img
                 className="img-responsive"
                 alt="image description"
-                src="http://placehold.it/960x620"
+                src={dVivoSimple}
               />
             </div>
             {/* product-block of the page */}
@@ -303,7 +300,7 @@ function LandingPage(props) {
               <img
                 className="img-responsive"
                 alt="image description"
-                src="http://placehold.it/480x620"
+                src={momento1}
               />
             </div>
             {/* product-block of the page */}
@@ -330,7 +327,7 @@ function LandingPage(props) {
               <img
                 className="img-responsive"
                 alt="image description"
-                src="http://placehold.it/480x620"
+                src={momento2}
               />
             </div>
           </div>
@@ -345,10 +342,7 @@ function LandingPage(props) {
                     {/* Blockquote Holder of the page */}
                     <div className="blockquote-holder">
                       <div className="author-img">
-                        <img
-                          src="http://placehold.it/135x135"
-                          alt="image description"
-                        />
+                        <img src={kakao} alt="image description" />
                       </div>
                       <h2 className="author-name">Press Spaceba</h2>
                       <p>
@@ -370,10 +364,7 @@ function LandingPage(props) {
                     {/* Blockquote Holder of the page */}
                     <div className="blockquote-holder">
                       <div className="author-img">
-                        <img
-                          src="http://placehold.it/135x135"
-                          alt="image description"
-                        />
+                        <img src={kakao} alt="image description" />
                       </div>
                       <h2 className="author-name">Press Spaceba</h2>
                       <p>
@@ -395,10 +386,7 @@ function LandingPage(props) {
                     {/* Blockquote Holder of the page */}
                     <div className="blockquote-holder">
                       <div className="author-img">
-                        <img
-                          src="http://placehold.it/135x135"
-                          alt="image description"
-                        />
+                        <img src={kakao} alt="image description" />
                       </div>
                       <h2 className="author-name">Press Spaceba</h2>
                       <p>

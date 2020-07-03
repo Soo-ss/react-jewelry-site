@@ -159,9 +159,9 @@ function Header(props) {
                       </Link>
                     </li>
                     <li>
-                      <a className="btn-search" href="/">
+                      {/* <a className="btn-search" href="/">
                         <i className="icon-search" />
-                      </a>
+                      </a> */}
                     </li>
                   </ul>
                 </div>

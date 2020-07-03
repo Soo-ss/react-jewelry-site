@@ -1,5 +1,9 @@
 "use strict";
 
+var _passportLocalMongoose = _interopRequireDefault(require("passport-local-mongoose"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 var mongoose = require("mongoose");
 
 var bcrypt = require("bcrypt");
@@ -20,6 +24,16 @@ var userSchema = mongoose.Schema({
     // delete blank
     unique: 1
   },
+  naverID: Number,
+  emailVerified: {
+    type: Boolean,
+    // required: true,
+    "default": false
+  },
+  keyForVerify: {
+    type: String // required: true,
+
+  },
   password: {
     type: String,
     minlength: 5
@@ -35,15 +49,16 @@ var userSchema = mongoose.Schema({
   tokenExp: {
     type: Number
   },
-  reviews: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Review" // ex. ID 1에 해당하는 리뷰를 가져온다.
-
-  }],
-  reservations: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Reservation"
-  }]
+  phone: String,
+  myName: String,
+  weddingDate: {
+    type: Date,
+    "default": null
+  },
+  reservationDate: {
+    type: Date,
+    "default": null
+  }
 });
 /*
 Arrow function이 안먹힌다.
@@ -126,8 +141,11 @@ userSchema.statics.findByToken = function (token, cb) {
       cb(null, user);
     });
   });
-}; // 스키마를 모델로 감싸준다.
+};
 
+userSchema.plugin(_passportLocalMongoose["default"], {
+  usernameField: "email"
+}); // 스키마를 모델로 감싸준다.
 
 var User = mongoose.model("User", userSchema);
 module.exports = {

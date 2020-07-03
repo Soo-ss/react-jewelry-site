@@ -6,7 +6,16 @@ var _require = require("../models/User"),
 
 var auth = function auth(req, res, next) {
   // 클라이언트 쿠키에서 토큰을 가져온다.
-  var token = req.cookies.x_auth; // 토큰을 복호화 한 후 유저를 찾는다.
+  var token = req.cookies.x_auth; // console.log("여기는 auth");
+  // console.log(req.url);
+  // console.log(req.body);
+  // if (req.url === "/naver") {
+  //   return res
+  //     .writeHead(200, { "Access-Control-Allow-Origin": "*" })
+  //     .json({ success: true });
+  //   // next();
+  // }
+  // 토큰을 복호화 한 후 유저를 찾는다.
 
   User.findByToken(token, function (err, user) {
     if (err) throw err;
