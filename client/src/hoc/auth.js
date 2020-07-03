@@ -16,7 +16,13 @@ export default (SpecificComponent, option, adminRoute = null) => {
     useEffect(() => {
       // dispatch
       dispatch(authUser()).then((response) => {
-        // console.log(response);
+        console.log(response.payload.emailVerified);
+
+        // 이메일 인증 안된 사용자는 홈으로 팅군다.
+        if (option && !response.payload.emailVerified) {
+          alert("이메일 인증을 진행해주세요.");
+          props.history.push("/");
+        }
 
         // isn't login
         if (!response.payload.isAuth) {

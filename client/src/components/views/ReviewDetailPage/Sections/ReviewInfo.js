@@ -52,7 +52,12 @@ function ReviewInfo(props) {
         <br />
         <br />
         <div>
-          <Button size="large" shape="round" type="danger" onClick={onDelete}>
+          <Button
+            size="large"
+            shape="round"
+            type="danger"
+            onClick={() => onDelete()}
+          >
             Delete
           </Button>
         </div>

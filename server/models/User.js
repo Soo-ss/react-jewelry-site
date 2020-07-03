@@ -1,3 +1,5 @@
+import passportLocalMongoose from "passport-local-mongoose";
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
@@ -13,6 +15,16 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true, // delete blank
     unique: 1,
+  },
+  naverID: Number,
+  emailVerified: {
+    type: Boolean,
+    // required: true,
+    default: false,
+  },
+  keyForVerify: {
+    type: String,
+    // required: true,
   },
   password: {
     type: String,
@@ -31,8 +43,14 @@ const userSchema = mongoose.Schema({
   },
   phone: String,
   myName: String,
-  weddingDate: Date,
-  reservationDate: Date,
+  weddingDate: {
+    type: Date,
+    default: null,
+  },
+  reservationDate: {
+    type: Date,
+    default: null,
+  },
 });
 
 /*
@@ -123,6 +141,10 @@ userSchema.statics.findByToken = function (token, cb) {
     );
   });
 };
+
+userSchema.plugin(passportLocalMongoose, {
+  usernameField: "email",
+});
 
 // 스키마를 모델로 감싸준다.
 const User = mongoose.model("User", userSchema);

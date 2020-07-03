@@ -4,6 +4,7 @@ import { loginUser } from "../../../_actions/userAction";
 import { withRouter } from "react-router-dom";
 import aboutFHD from "../../../images/aboutFHD.png";
 import "./loginStyle.scss";
+import Axios from "axios";
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -40,6 +41,19 @@ function LoginPage(props) {
       }
     });
   };
+
+  // const onNaverLogin = () => {
+  //   Axios.get("/api/OAuth/naver").then((response) => {
+  //     console.log(response.headers);
+  //     if (response.data.success) {
+  //       alert("네이버 로그인 성공!");
+  //       props.history.push("/");
+  //       window.location.reload();
+  //     } else {
+  //       alert("네이버 로그인 실패");
+  //     }
+  //   });
+  // };
 
   return (
     <main id="main">
@@ -94,10 +108,12 @@ function LoginPage(props) {
             <div className="form-group">
               <a href="/">Forget Password?</a>
               <button className="btn-primary btn-login">Login</button>
-              <button className="btn-naver">네이버로그인</button>
             </div>
           </fieldset>
         </form>
+        {/* <button className="btn-naver" onClick={onNaverLogin}>
+          <a href="http://localhost:5000/api/OAuth/naver">네이버로그인</a>
+        </button> */}
       </section>
     </main>
   );
