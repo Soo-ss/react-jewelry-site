@@ -9,6 +9,7 @@ import config from "./config/key";
 import userRouter from "./routers/userRouter";
 import reservationRouter from "./routers/reservationRouter";
 import reviewRouter from "./routers/reviewRouter";
+import adminRouter from "./routers/adminRouter";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -34,6 +35,7 @@ mongoose
 app.use("/api/users", userRouter);
 app.use("/api/reservation", reservationRouter);
 app.use("/api/review", reviewRouter);
+app.use("/api/admin", adminRouter);
 
 // Handle React routing, return all requests to React app
 app.get("*", (req, res) => {

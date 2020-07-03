@@ -23,6 +23,8 @@ import ReservationPage from "./components/views/ReservationPage/ReservationPage"
 import ReviewPage from "./components/views/ReviewPage/ReviewPage";
 import UploadReviewPage from "./components/views/UploadReviewPage/UploadReviewPage";
 import ReviewDetailPage from "./components/views/ReviewDetailPage/ReviewDetailPage";
+import MyPage from "./components/views/MyPage/MyPage";
+import AdminPage from "./components/views/AdminPage/AdminPage";
 
 function App() {
   // init third party JS files
@@ -94,6 +96,12 @@ function App() {
               exact
               path="/review/:reviewID"
               component={Auth(ReviewDetailPage, null)}
+            />
+            <Route exact path="/me/:userID" component={Auth(MyPage, true)} />
+            <Route
+              exact
+              path="/admin"
+              component={Auth(AdminPage, true, true)}
             />
           </Switch>
         </Router>

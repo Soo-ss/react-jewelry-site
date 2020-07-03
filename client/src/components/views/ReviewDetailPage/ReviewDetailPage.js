@@ -5,20 +5,26 @@ import ReviewImage from "./Sections/ReviewImage";
 import ReviewInfo from "./Sections/ReviewInfo";
 import { withRouter } from "react-router-dom";
 import aboutFHD from "../../../images/aboutFHD.png";
+// import { useSelector } from "react-redux";
 
 function ReviewDetailPage(props) {
   // withRouter 안싸주면 params undefined
   const reviewID = props.match.params.reviewID;
   const [Review, setReview] = useState([]);
   // console.log(reviewID);
+  // const [ReviewUserID, setReviewUserID] = useState("");
 
   useEffect(() => {
     Axios.get(`/api/review/reviews_by_id?id=${reviewID}&type=single`).then(
       (response) => {
         setReview(response.data[0]);
+        // setReviewUserID(response.data[0].creator._id);
       }
     );
   }, []);
+
+  // const user = useSelector((state) => state.user.userData);
+  // console.log(user);
 
   return (
     <div id="main">

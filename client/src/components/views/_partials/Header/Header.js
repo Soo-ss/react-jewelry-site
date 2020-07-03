@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../../../images/logo.png";
 import userImg from "../../../../images/user.png";
 // import img02 from "../../../images/img02.jpg";
 import { useSelector } from "react-redux";
-import axios from "axios";
+import Axios from "axios";
 import { USER_SERVER } from "../../../../Config";
-// import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 // 앱 내에서 다른 라우트로 이동 할 때에는, 일반 <a href...>foo</a> 형식으로 하면 안됩니다.
@@ -19,9 +19,16 @@ import { Link } from "react-router-dom";
 
 function Header(props) {
   const user = useSelector((state) => state.user);
+  const [CurID, setCurID] = useState("");
+
+  useEffect(() => {
+    Axios.get("/api/users/auth").then((response) => {
+      setCurID(response.data._id);
+    });
+  }, []);
 
   const logoutHandler = () => {
-    axios.get(`${USER_SERVER}/logout`).then((response) => {
+    Axios.get(`${USER_SERVER}/logout`).then((response) => {
       if (response.status === 200) {
         alert("로그아웃 하셨습니다");
         props.history.push("/");
@@ -147,9 +154,9 @@ function Header(props) {
                   {/* social-networks of the page */}
                   <ul className="list-unstyled icon-list">
                     <li>
-                      <a href="/">
+                      <Link to={`/me/${CurID}`}>
                         <img src={userImg} alt="images description" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a className="btn-search" href="/">
@@ -167,4 +174,4 @@ function Header(props) {
   }
 }
 
-export default Header;
+export default withRouter(Header);

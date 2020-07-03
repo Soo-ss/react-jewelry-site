@@ -123,6 +123,32 @@ export const reviewDetail = (req, res) => {
       if (err) {
         return res.status(400).send(err);
       }
+      review[0].views++;
+      review[0].save();
       return res.status(200).send(review);
     });
+};
+
+export const deleteReview = async (req, res) => {
+  const requestID = req.body.userData._id;
+  const id = req.query.id;
+  try {
+    const review = await Review.findById(id);
+    console.log(review);
+    if (String(review.creator) !== requestID) {
+      throw Error();
+    } else {
+      await Review.findOneAndRemove({
+        _id: id,
+      });
+      return res.status(200).json({
+        success: true,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json({
+      success: false,
+    });
+  }
 };

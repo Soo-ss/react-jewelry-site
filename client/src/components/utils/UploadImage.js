@@ -49,8 +49,8 @@ function UploadImage(props) {
             }}
             {...getRootProps()}
           >
-            {console.log("getRootProps", { ...getRootProps() })}
-            {console.log("getInputProps", { ...getInputProps() })}
+            {/* {console.log("getRootProps", { ...getRootProps() })} */}
+            {/* {console.log("getInputProps", { ...getInputProps() })} */}
             <input {...getInputProps()} />
           </div>
         )}

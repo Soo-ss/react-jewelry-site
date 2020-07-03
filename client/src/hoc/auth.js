@@ -16,7 +16,7 @@ export default (SpecificComponent, option, adminRoute = null) => {
     useEffect(() => {
       // dispatch
       dispatch(authUser()).then((response) => {
-        console.log(response);
+        // console.log(response);
 
         // isn't login
         if (!response.payload.isAuth) {

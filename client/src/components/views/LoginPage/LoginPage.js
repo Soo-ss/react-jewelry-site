@@ -21,8 +21,8 @@ function LoginPage(props) {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    console.log("email", Email);
-    console.log("password", Password);
+    // console.log("email", Email);
+    // console.log("password", Password);
 
     // body에다가 이메일 패스워드 담아서 보낸다
     let body = {
