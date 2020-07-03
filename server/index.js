@@ -58,18 +58,6 @@ app.use("/api/reservation", reservationRouter);
 app.use("/api/review", reviewRouter);
 app.use("/api/admin", adminRouter);
 
-// Handle React routing, return all requests to React app
-app.get("*", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "../client", "public", "index.html"),
-    (err) => {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
-});
-
 // production
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
