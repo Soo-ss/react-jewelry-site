@@ -2,4 +2,4 @@
 
 ## 보석집
 
-### 임시 주소: `https://react-desia.herokuapp.com/`
+#### 임시 주소: [Link](https://react-desia.herokuapp.com/)
