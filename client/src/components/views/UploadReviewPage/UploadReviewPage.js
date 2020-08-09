@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Axios from "axios";
 import UploadImage from "../../utils/UploadImage";
+import Banner from "../_partials/Banner/Banner";
 
 function UploadReviewPage(props) {
   const user = useSelector((state) => state.user);
@@ -53,28 +54,7 @@ function UploadReviewPage(props) {
   };
   return (
     <main id="main">
-      <section
-        className="banner"
-        style={{ backgroundImage: `url(${aboutFHD})` }}
-      >
-        <span className="sale-percent">Best of best</span>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="caption">
-                <h1 className="main-heading heading">Upload Review</h1>
-                <ul className="list-unstyled breadcrumbs">
-                  {/* <li>
-                    
-                  </li> */}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span className="year">TRENDS FOR 2020</span>
-      </section>
-
+      <Banner title="upload review" bg={aboutFHD} />
       <div className="holder">
         <h3 style={{ textAlign: "center" }}>LEAVE A MESSAGE</h3>
         <form
@@ -82,7 +62,12 @@ function UploadReviewPage(props) {
           // encType="multipart/form-data"
           onSubmit={onSubmit}
         >
-          <fieldset style={{ maxWidth: "700px", margin: "2rem auto" }}>
+          <fieldset
+            style={{
+              maxWidth: "700px",
+              margin: "2rem auto",
+            }}
+          >
             <div className="form-group">
               <div className="col">
                 <UploadImage refreshFunction={updateImages} />
@@ -99,6 +84,7 @@ function UploadReviewPage(props) {
               </div>
               <div className="col">
                 <textarea
+                  style={{ resize: "none", height: "300px" }}
                   className="form-control"
                   type="text"
                   placeholder="설명"
@@ -108,7 +94,7 @@ function UploadReviewPage(props) {
                 ></textarea>
               </div>
             </div>
-            <button className="btn-primary btn-submit">확인</button>
+            <button className="btn-primary btn-submit">Upload</button>
           </fieldset>
         </form>
       </div>

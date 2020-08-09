@@ -5,6 +5,7 @@ import ReviewImage from "./Sections/ReviewImage";
 import ReviewInfo from "./Sections/ReviewInfo";
 import { withRouter } from "react-router-dom";
 import aboutFHD from "../../../images/aboutFHD.png";
+import Banner from "../_partials/Banner/Banner";
 // import { useSelector } from "react-redux";
 
 function ReviewDetailPage(props) {
@@ -28,23 +29,8 @@ function ReviewDetailPage(props) {
 
   return (
     <div id="main">
-      <section
-        className="banner"
-        style={{ backgroundImage: `url(${aboutFHD})` }}
-      >
-        <span className="sale-percent">Best of best</span>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="caption">
-                <h1 className="main-heading heading">Detail</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span className="year">TRENDS FOR 2020</span>
-      </section>
-      <div className="holder">
+      <Banner title="detail" bg={aboutFHD} />
+      <div className="noto">
         <div
           className="postPage"
           style={{ width: "100%", padding: "3rem 4rem" }}

@@ -1,2 +1,9 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 @import "~antd/dist/antd.css";
+
+/* https주의 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.noto {
+  font-family: "Noto Sans KR", sans-serif;
+}

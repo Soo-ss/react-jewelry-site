@@ -4,7 +4,7 @@ import { loginUser } from "../../../_actions/userAction";
 import { withRouter } from "react-router-dom";
 import aboutFHD from "../../../images/aboutFHD.png";
 import "./loginStyle.scss";
-import Axios from "axios";
+import Banner from "../_partials/Banner/Banner";
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -57,31 +57,7 @@ function LoginPage(props) {
 
   return (
     <main id="main">
-      <section
-        className="banner"
-        style={{ backgroundImage: `url(${aboutFHD})` }}
-      >
-        <span className="sale-percent">Best of best</span>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="caption">
-                <h1 className="main-heading heading-1">Login</h1>
-                <ul className="list-unstyled breadcrumbs">
-                  <li>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="/">Collection</a>
-                  </li>
-                  <li>Login</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span className="year">TRENDS FOR 2020</span>
-      </section>
+      <Banner title="login" bg={aboutFHD} />
       <section className="form-sec">
         <form className="contact-form" onSubmit={onSubmitHandler}>
           <fieldset>

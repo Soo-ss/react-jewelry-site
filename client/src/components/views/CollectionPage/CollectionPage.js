@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import collectionBG from "../../../images/collectionBG.jpg";
 import img46 from "../../../images/img46.jpg";
 import momento1 from "../../../images/momento1.jpeg";
@@ -10,35 +10,45 @@ import momento6 from "../../../images/momento6.jpeg";
 import momento7 from "../../../images/momento7.jpeg";
 import graceful from "../../../images/graceful.jpg";
 import dprincess from "../../../images/dPrincess.jpg";
+import Banner from "../_partials/Banner/Banner";
 // import { withRouter } from "react-router-dom";
 
 function CollectionPage() {
+  // 뒤로가기 버튼 누르면 이펙트 활성화가 안돼서 이렇게 해준다
+  // init third party JS files
+  useEffect(() => {
+    let one = document.createElement("script");
+    let two = document.createElement("script");
+    let three = document.createElement("script");
+
+    // hook sources
+    one.src = `${process.env.PUBLIC_URL}/js/jq.js`;
+    two.src = `${process.env.PUBLIC_URL}/js/plugins.js`;
+    three.src = `${process.env.PUBLIC_URL}/js/init.js`;
+
+    // persist order of loading
+    one.async = false;
+    two.async = false;
+    three.async = false;
+
+    // append to index.html
+    document.body.appendChild(one);
+    document.body.appendChild(two);
+    document.body.appendChild(three);
+
+    // do clean ups
+    return () => {
+      document.body.removeChild(one);
+      document.body.removeChild(two);
+      document.body.removeChild(three);
+    };
+  }, []);
+
+  const s3URL = "https://desiacw.s3.ap-northeast-2.amazonaws.com";
+
   return (
     <main id="main">
-      {/* main-banner of the page*/}
-      <section
-        className="banner wow fadeInUp"
-        data-wow-delay="0.4s"
-        style={{ backgroundImage: `url(${collectionBG})` }}
-      >
-        <span className="sale-percent">Best of best</span>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="caption">
-                <h1 className="main-heading">Collection</h1>
-                <ul className="list-unstyled breadcrumbs">
-                  <li>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>shop</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span className="year">TRENDS FOR 2020</span>
-      </section>
+      <Banner title="collection" bg={collectionBG} />
       {/* product-section of the page*/}
       <section className="product-sec wow fadeInUp" data-wow-delay="0.4s">
         <div className="container">
@@ -49,16 +59,16 @@ function CollectionPage() {
                   <a>all</a>
                 </li>
                 <li>
+                  <a data-filter=".dVivo">dVivo</a>
+                </li>
+                <li>
+                  <a data-filter=".haram">haram</a>
+                </li>
+                <li>
                   <a data-filter=".momento">momento</a>
                 </li>
                 <li>
-                  <a data-filter=".dvivo">dvivo</a>
-                </li>
-                <li>
-                  <a data-filter=".heartbeat">heartbeat</a>
-                </li>
-                <li>
-                  <a data-filter=".set">set</a>
+                  <a data-filter=".weddingBand">weddingBand</a>
                 </li>
               </ul>
             </div>
@@ -66,8 +76,9 @@ function CollectionPage() {
         </div>
         <div className="holder" id="masonry-container">
           {/* product-block of the page*/}
-          <div className="product-block coll-2 momento set">
-            <div className="over">
+          <div className="product-block coll-2 dVivo">
+            {/* 공통요소 */}
+            {/* <div className="over">
               <div className="align-left">
                 <strong className="title-name">
                   <a href="product-page.html">Goldtone Bib</a>
@@ -79,200 +90,157 @@ function CollectionPage() {
               <a className="like" href="/">
                 <i className="icon-favorite" /> 23
               </a>
-            </div>
+            </div> */}
             <img
               className="img-responsive"
               alt="image description"
-              src={momento1}
+              src={`${s3URL}/myimg/collection/dVivo/dVivo.jpg`}
             />
           </div>
           {/* product-block of the page*/}
-          <div className="product-block coll-2 dvivo brooches">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="/">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-2 dVivo">
             <img
               className="img-responsive"
               alt="image description"
-              src={momento2}
+              src={`${s3URL}/myimg/collection/dVivo/dVivoCube.jpg`}
             />
           </div>
           {/* product-block of the page*/}
-          <div className="product-block coll-1 heartbeat dvivo">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="/">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-1 dVivo">
             <img
               className="img-responsive"
               alt="image description"
-              src={momento3}
+              src={`${s3URL}/myimg/collection/dVivo/dVivoMain2.jpg`}
             />
           </div>
           {/* product-block of the page*/}
-          <div className="product-block coll-1 set">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="/">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-1 dVivo">
             <img
               className="img-responsive"
               alt="image description"
-              src={graceful}
+              src={`${s3URL}/myimg/collection/dVivo/dVivoSimple.jpg`}
             />
           </div>
           {/* product-block of the page*/}
-          <div className="product-block coll-1 brooches momento">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="product-page.html">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-1 haram">
             <img
               className="img-responsive"
               alt="image description"
-              src={dprincess}
+              src={`${s3URL}/myimg/collection/haram/haramDiamond.jpg`}
             />
           </div>
           {/* product-block of the page*/}
-          <div className="product-block coll-2 men">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="/">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-2 haram">
             <img
               className="img-responsive"
               alt="image description"
-              src={momento3}
+              src={`${s3URL}/myimg/collection/haram/haramNew.jpg`}
             />
           </div>
           {/* product-block of the page*/}
-          <div className="product-block coll-2 dvivo men">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="/">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-2 haram">
             <img
               className="img-responsive"
               alt="image description"
-              src={momento4}
+              src={`${s3URL}/myimg/collection/haram/haramSimple.jpg`}
             />
           </div>
-          {/* product-block of the page*/}
-          <div className="product-block coll-2 heartbeat dvivo">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="/">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-2 momento">
             <img
               className="img-responsive"
               alt="image description"
-              src={momento5}
+              src={`${s3URL}/myimg/collection/momento/momento1.jpg`}
             />
           </div>
-          {/* product-block of the page*/}
-          <div className="product-block coll-2 set">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="/">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-2 momento">
             <img
               className="img-responsive"
               alt="image description"
-              src={momento6}
+              src={`${s3URL}/myimg/collection/momento/momento2.jpg`}
             />
           </div>
-          {/* product-block of the page*/}
-          <div className="product-block coll-2 brooches set">
-            <div className="over">
-              <div className="align-left">
-                <strong className="title-name">
-                  <a href="product-page.html">Goldtone Bib</a>
-                </strong>
-                <strong className="price">
-                  <del>150$</del> 120$
-                </strong>
-              </div>
-              <a className="like" href="/">
-                <i className="icon-favorite" /> 23
-              </a>
-            </div>
+          <div className="product-block coll-2 momento">
             <img
               className="img-responsive"
               alt="image description"
-              src={momento7}
+              src={`${s3URL}/myimg/collection/momento/momento3.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 momento">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/momento/momentoGray.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 momento">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/momento/momentoReturn.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 momento">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/momento/momentoRoma.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 momento">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/momento/momentoSquare.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 momento">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/momento/momentoTheSimple.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 weddingBand">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/weddingBand/banus.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 weddingBand">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/weddingBand/ido.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 weddingBand">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/weddingBand/incontro.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 weddingBand">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/weddingBand/noje.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 weddingBand">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/weddingBand/nojeAngle.jpg`}
+            />
+          </div>
+          <div className="product-block coll-2 weddingBand">
+            <img
+              className="img-responsive"
+              alt="image description"
+              src={`${s3URL}/myimg/collection/weddingBand/yeah.jpg`}
             />
           </div>
           {/* product-block of the page*/}

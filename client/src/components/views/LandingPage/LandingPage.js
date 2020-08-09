@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import landingImage from "../../../images/main.png";
+import main1 from "../../../images/main1.png";
+import main3 from "../../../images/main3.png";
 import areaHand2 from "../../../images/areaHand2.jpg";
-import dVivo from "../../../images/dVivo.jpeg";
-import dVivoMain from "../../../images/dVivoMain.jpeg";
-import dVivoCube from "../../../images/dVivoCube.jpeg";
-import dVivoSimple from "../../../images/dVivoSimple.jpeg";
-import momento1 from "../../../images/momento1.jpeg";
-import momento2 from "../../../images/momento2.jpeg";
-import kakao from "../../../images/kakao2.png";
+import designer from "../../../images/designer.jpg";
+import LandingSlide from "./LandingSlide";
+import TeamBlock from "../AboutPage/TeamBlock";
 
 function LandingPage(props) {
   // 뒤로가기 버튼 누르면 이펙트 활성화가 안돼서 이렇게 해준다
@@ -39,6 +37,9 @@ function LandingPage(props) {
       document.body.removeChild(three);
     };
   }, []);
+
+  const s3URL = "https://desiacw.s3.ap-northeast-2.amazonaws.com";
+
   return (
     <>
       {/* contain main informative part of the site */}
@@ -51,102 +52,76 @@ function LandingPage(props) {
               <a href="/" className="icon-facebook" />
             </li>
             <li>
-              <a href="/" className="icon-twitter" />
+              <a href="https://pf.kakao.com/_Awcxcj" className="fa fa-link" />
             </li>
             <li className="instagram">
-              <a href="/" className="icon-instagram" />
+              <a
+                href="https://www.instagram.com/desia_changwon/"
+                className="icon-instagram"
+              />
             </li>
           </ul>
           {/* Main Slider of the page */}
           <div id="main-slider">
-            {/* Slide of the page */}
-            <div className="slide">
-              <div className="container">
-                <div className="row">
-                  <div className="col-xs-12">
-                    <div className="beans-slider">
-                      <div className="border">
-                        <h1 className="slider-heading">Design Beyond Time</h1>
-                        <div className="img-holder">
-                          <img src={landingImage} alt="image description" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Slide of the page */}
-            <div className="slide">
-              <div className="container">
-                <div className="row">
-                  <div className="col-xs-12">
-                    <div className="beans-slider">
-                      <div className="border">
-                        <h1 className="slider-heading">Design Beyond Time</h1>
-                        <div className="img-holder">
-                          <img src={landingImage} alt="image description" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Slide of the page */}
-            <div className="slide">
-              <div className="container">
-                <div className="row">
-                  <div className="col-xs-12">
-                    <div className="beans-slider">
-                      <div className="border">
-                        <h1 className="slider-heading">Design Beyond Time</h1>
-                        <div className="img-holder">
-                          <img src={landingImage} alt="image description" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <LandingSlide bg={main1} />
+            <LandingSlide bg={landingImage} />
+            <LandingSlide bg={main3} />
           </div>
         </section>
+        <video
+          style={{ width: "100%" }}
+          className="videoTag"
+          autoPlay
+          loop
+          muted>
+          <source src={`${s3URL}/video/desiaSub.mp4`} type="video/mp4" />
+        </video>
         {/* main-banner of the page */}
         <section
           className="banner banner-2 wow fadeInUp"
           data-wow-delay="0.4s"
-          style={{ backgroundImage: `url(${areaHand2})` }}
-        >
-          <span className="sale-percent">Tel: (02)123 4567</span>
+          style={{ backgroundImage: `url(${areaHand2})` }}>
           <div className="container">
             <div className="row">
               <div className="col-xs-12">
                 <div className="caption-holder">
                   <div className="text-holder">
-                    <h1 className="banner-heading">ABOUT US</h1>
-                    <strong className="title">A Dreamers Dream</strong>
-                    <p>
-                      Pharetra, erat sed fermentum feugiat, velit mauris egestas
-                      quam, ut aliquam <br />
-                      massa nisl quis neque. Suspendisse in orci enim pharetra,
-                      erat sed fermentum <br />
-                      feugiat, velit mauris egestas quam ut aliquam massa
-                      Suspendisse in orci <br />
-                      enim.pharetra, erat sed fermentum feugiat.
-                    </p>
-                    <a href="about-us.html" className="btn-more">
+                    <h1 className="banner-heading">Best of best</h1>
+                    <strong className="title">Haram</strong>
+                    {/* <p>A nervous heart toward each other</p>
+                    <p style={{ fontSize: "20px" }} className="noto">
+                      "하늘이 내려준 소중한 사람"
+                    </p> */}
+                    <div className="noto">
+                      <p style={{ fontSize: "20px" }}>
+                        하람은 `하늘이 내려준 소중한 사람`이라는 의미를 가지고
+                        있습니다.
+                      </p>
+                      밴드 라인의 각진 컷팅은 하늘 위의 구름 사이로 비치는 밝은
+                      빚줄기를,
+                      <br />
+                      메인 다이아몬드는 영원한 사랑을 의미하며,
+                      <br />
+                      서브 다이아몬드는 사랑하는 사람에게 비치는 아름다운 후광을
+                      표현하였습니다.
+                      <br />
+                      새롭게 시작될 신랑, 신부님의 앞날을 축복하는 마음을 담아
+                      디자인되었습니다.
+                    </div>
+                    {/* <a href="/" className="btn-more">
                       Read more <i className="icon-right-arrow" />
-                    </a>
+                    </a> */}
                   </div>
                   <div className="img-holder">
-                    <img src={dVivo} alt="image description" />
+                    <img
+                      src={`${s3URL}/myimg/main/haramNew.png`}
+                      alt="image description"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <span className="year">TRENDS FOR 2016</span>
         </section>
         {/* product-section of the page */}
         <section className="product-sec wow fadeInUp" data-wow-delay="0.4s">
@@ -154,254 +129,152 @@ function LandingPage(props) {
             {/* product-block of the page */}
             <div className="product-block coll-1">
               <div className="align-text">
-                <span className="title">featured roducts</span>
-                <h4 className="product-heading">romantic</h4>
-                <p>
-                  Pharetra, erat sed fermentum feugiat, velit mauris egestas
-                  <br />
-                  quam, ut aliquam massa nisl quis neque.
+                <span className="title">featured products</span>
+                <h4 className="product-heading">D:Vivo</h4>
+                <p style={{ fontSize: "16px" }} className="noto">
+                  데시아 브랜드 근원인 심볼D를 기반으로 디자인된 웨딩 밴드,
+                  중심이란 뜻의 Vivo와 결합해 밴드 라인 중앙에 알파벳 D를
+                  형상화하여 디자인되었습니다.
                 </p>
-                <a href="product-page.html" className="btn-more">
-                  Continue <i className="icon-right-arrow" />
-                </a>
               </div>
             </div>
             {/* product-block of the page */}
             <div className="product-block block coll-2">
-              <div className="box">
-                <a href="product-page.html" className="btn-default">
-                  shop now{" "}
-                </a>
-                <div className="over">
-                  <div className="holder">
-                    <div className="align-left">
-                      <strong className="title-name">Goldtone Bib</strong>
-                      <strong className="price">
-                        <del>150$</del> 120$
-                      </strong>
-                    </div>
-                    <a href="/" className="like">
-                      <i className="icon-favorite" />
-                      23
-                    </a>
-                  </div>
-                </div>
-              </div>
               <img
                 className="img-responsive"
                 alt="image description"
-                src={dVivoMain}
+                src={`${s3URL}/myimg/main/dVivo/dVivo.jpg`}
               />
             </div>
             {/* product-block of the page */}
             <div className="product-block block coll-2">
-              <div className="box">
-                <a href="product-page.html" className="btn-default">
-                  shop now{" "}
-                </a>
-                <div className="over">
-                  <div className="holder">
-                    <div className="align-left">
-                      <strong className="title-name">Goldtone Bib</strong>
-                      <strong className="price">
-                        <del>150$</del> 120$
-                      </strong>
-                    </div>
-                    <a href="/" className="like">
-                      <i className="icon-favorite" />
-                      23
-                    </a>
-                  </div>
-                </div>
-              </div>
               <img
                 className="img-responsive"
                 alt="image description"
-                src={dVivoCube}
+                src={`${s3URL}/myimg/main/dVivo/dVivoCube.jpg`}
               />
             </div>
           </div>
           <div className="product-holder">
             {/* product-block of the page */}
             <div className="product-block block coll-1">
-              <div className="box">
-                <a href="product-page.html" className="btn-default">
-                  shop now{" "}
-                </a>
-                <div className="over">
-                  <div className="holder">
-                    <div className="align-left">
-                      <strong className="title-name">Goldtone Bib</strong>
-                      <strong className="price">
-                        <del>150$</del> 120$
-                      </strong>
-                    </div>
-                    <a href="/" className="like">
-                      <i className="icon-favorite" />
-                      23
-                    </a>
-                  </div>
-                </div>
-              </div>
               <img
                 className="img-responsive"
                 alt="image description"
-                src={dVivo}
+                src={`${s3URL}/myimg/main/dVivo/dVivoMain2.jpg`}
               />
             </div>
             {/* product-block of the page */}
             <div className="product-block block coll-1">
-              <div className="box">
-                <a href="product-page.html" className="btn-default">
-                  shop now{" "}
-                </a>
-                <div className="over">
-                  <div className="holder">
-                    <div className="align-left">
-                      <strong className="title-name">Goldtone Bib</strong>
-                      <strong className="price">
-                        <del>150$</del> 120$
-                      </strong>
-                    </div>
-                    <a href="/" className="like">
-                      <i className="icon-favorite" />
-                      23
-                    </a>
-                  </div>
-                </div>
-              </div>
               <img
                 className="img-responsive"
                 alt="image description"
-                src={dVivoSimple}
+                src={`${s3URL}/myimg/main/dVivo/dVivoSimple.jpg`}
               />
             </div>
-            {/* product-block of the page */}
-            <div className="product-block block coll-2">
-              <div className="box">
-                <a href="product-page.html" className="btn-default">
-                  shop now{" "}
-                </a>
-                <div className="over">
-                  <div className="holder">
-                    <div className="align-left">
-                      <strong className="title-name">Goldtone Bib</strong>
-                      <strong className="price">
-                        <del>150$</del> 120$
-                      </strong>
-                    </div>
-                    <a href="/" className="like">
-                      <i className="icon-favorite" />
-                      23
-                    </a>
-                  </div>
-                </div>
-              </div>
+            {/* <div className="product-block block coll-2">
               <img
                 className="img-responsive"
                 alt="image description"
                 src={momento1}
               />
             </div>
-            {/* product-block of the page */}
             <div className="product-block block coll-2">
-              <div className="box">
-                <a href="product-page.html" className="btn-default">
-                  shop now{" "}
-                </a>
-                <div className="over">
-                  <div className="holder">
-                    <div className="align-left">
-                      <strong className="title-name">Goldtone Bib</strong>
-                      <strong className="price">
-                        <del>150$</del> 120$
-                      </strong>
-                    </div>
-                    <a href="/" className="like">
-                      <i className="icon-favorite" />
-                      23
-                    </a>
-                  </div>
-                </div>
-              </div>
               <img
                 className="img-responsive"
                 alt="image description"
                 src={momento2}
               />
+            </div> */}
+          </div>
+        </section>
+        <section className="product-sec wow fadeInUp" data-wow-delay="0.4s">
+          <div className="product-holder">
+            {/* product-block of the page */}
+            <div className="product-block coll-1">
+              <div className="align-text">
+                <span className="title">featured products</span>
+                <h4 className="product-heading">Momento</h4>
+                <p className="noto">
+                  누구에게나 소중한 날이 있을 것입니다. 그 중 하나가 일생에 단
+                  한번인 특별한 날, 바로 사랑하는 사람과 하나가 되는 날입니다.
+                  기념일을 새겨 오랫동안 간직할 수 있도록 제작된 커플링,
+                  모멘토(Momento)입니다.
+                </p>
+                <a href="/" className="btn-more">
+                  Continue <i className="icon-right-arrow" />
+                </a>
+              </div>
+            </div>
+            {/* product-block of the page */}
+            <div className="product-block block coll-2">
+              <img
+                className="img-responsive"
+                alt="image description"
+                src={`${s3URL}/myimg/main/momento/momento1.jpg`}
+              />
+            </div>
+            {/* product-block of the page */}
+            <div className="product-block block coll-2">
+              <img
+                className="img-responsive"
+                alt="image description"
+                src={`${s3URL}/myimg/main/momento/momento2.jpg`}
+              />
+            </div>
+          </div>
+          <div className="product-holder">
+            {/* product-block of the page */}
+            <div className="product-block block coll-1">
+              <img
+                className="img-responsive"
+                alt="image description"
+                src={`${s3URL}/myimg/main/momento/momentoGray.jpg`}
+              />
+            </div>
+            {/* product-block of the page */}
+            <div className="product-block block coll-1">
+              <img
+                className="img-responsive"
+                alt="image description"
+                src={`${s3URL}/myimg/main/momento/momentoReturn.jpg`}
+              />
+            </div>
+            {/* product-block of the page */}
+            <div className="product-block block coll-2">
+              <img
+                className="img-responsive"
+                alt="image description"
+                src={`${s3URL}/myimg/main/momento/momentoSquare.jpg`}
+              />
+            </div>
+            {/* product-block of the page */}
+            <div className="product-block block coll-2">
+              <img
+                className="img-responsive"
+                alt="image description"
+                src={`${s3URL}/myimg/main/momento/momentoTheSimple.jpg`}
+              />
             </div>
           </div>
         </section>
-        {/* blockquote-section of the page */}
-        <section className="blockquote-sec wow fadeInUp" data-wow-delay="0.4s">
-          <ul className="list-unstyled blockquote-slider">
-            <li>
-              <div className="container">
-                <div className="row">
-                  <div className="col-xs-12 text-center">
-                    {/* Blockquote Holder of the page */}
-                    <div className="blockquote-holder">
-                      <div className="author-img">
-                        <img src={kakao} alt="image description" />
-                      </div>
-                      <h2 className="author-name">Press Spaceba</h2>
-                      <p>
-                        Pharetra, erat sed fermentum feugiat, velit mauris
-                        egestas quam, ut aliqua m massa nisl quis neque.
-                        Suspendisse in orci enim pharetra, erat sed fermentum
-                        feugiat, velit mauris egestas quam ut aliquam massa
-                        uspendisse .
-                      </p>
-                    </div>
-                  </div>
+        <section className="team-sec wow fadeInUp" data-wow-delay="0.4s">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12">
+                <div className="header text-center">
+                  <span className="title">Our Awesome Team</span>
+                  <h3 className="about-heading">meet our team</h3>
                 </div>
+                <ul className="list-unstyled team-slider">
+                  <TeamBlock people={designer} />
+                  <TeamBlock people={designer} />
+                  <TeamBlock people={designer} />
+                  <TeamBlock people={designer} />
+                </ul>
               </div>
-            </li>
-            <li>
-              <div className="container">
-                <div className="row">
-                  <div className="col-xs-12 text-center">
-                    {/* Blockquote Holder of the page */}
-                    <div className="blockquote-holder">
-                      <div className="author-img">
-                        <img src={kakao} alt="image description" />
-                      </div>
-                      <h2 className="author-name">Press Spaceba</h2>
-                      <p>
-                        Pharetra, erat sed fermentum feugiat, velit mauris
-                        egestas quam, ut aliqua m massa nisl quis neque.
-                        Suspendisse in orci enim pharetra, erat sed fermentum
-                        feugiat, velit mauris egestas quam ut aliquam massa
-                        uspendisse .
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="container">
-                <div className="row">
-                  <div className="col-xs-12 text-center">
-                    {/* Blockquote Holder of the page */}
-                    <div className="blockquote-holder">
-                      <div className="author-img">
-                        <img src={kakao} alt="image description" />
-                      </div>
-                      <h2 className="author-name">Press Spaceba</h2>
-                      <p>
-                        Pharetra, erat sed fermentum feugiat, velit mauris
-                        egestas quam, ut aliqua m massa nisl quis neque.
-                        Suspendisse in orci enim pharetra, erat sed fermentum
-                        feugiat, velit mauris egestas quam ut aliquam massa
-                        uspendisse .
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </section>
       </main>
     </>

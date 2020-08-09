@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Axios from "axios";
-import { Icon, Row, Col, Card } from "antd";
+import { Icon, Row, Col, Card, Button } from "antd";
 import ImageSlider from "../../utils/ImageSlider";
 import "./reviewPage.scss";
 
@@ -70,7 +70,8 @@ function ReviewPage(props) {
   return (
     <main id="main">
       <section
-        className="banner"
+        className="banner wow fadeInUp"
+        data-wow-delay="0.4s"
         style={{ backgroundImage: `url(${aboutFHD})` }}
       >
         <span className="sale-percent">Best of best</span>
@@ -91,11 +92,14 @@ function ReviewPage(props) {
         <span className="year">TRENDS FOR 2020</span>
       </section>
 
-      <div className="holder">
+      <div className="noto">
         <div style={{ width: "75%", margin: "3rem auto" }}>
           <div style={{ textAlign: "center" }}>
             <h2>
               All Lists <Icon type="rocket" />
+              <br />
+              <br />
+              이미지를 클릭하시면 상세페이지로 이동합니다.
             </h2>
           </div>
 
@@ -120,7 +124,7 @@ function ReviewPage(props) {
 
           {PostSize >= Limit && (
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <button onClick={onLoadMore}>Load More</button>
+              <Button onClick={onLoadMore}>Load More</Button>
             </div>
           )}
         </div>

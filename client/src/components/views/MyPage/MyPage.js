@@ -4,6 +4,9 @@ import aboutFHD from "../../../images/aboutFHD.png";
 import Axios from "axios";
 import { Button } from "antd";
 import { useSelector } from "react-redux";
+import moment from "moment";
+import "../MyPage/myPageStyle.scss";
+import Banner from "../_partials/Banner/Banner";
 
 function MyPage(props) {
   const userID = props.match.params.userID;
@@ -52,32 +55,71 @@ function MyPage(props) {
   if (IsAdmin) {
     return (
       <div id="main">
-        <section
-          className="banner"
-          style={{ backgroundImage: `url(${aboutFHD})` }}
+        <Banner title="myPage" bg={aboutFHD} />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          <span className="sale-percent">Best of best</span>
-          <div className="container">
-            <div className="row">
-              <div className="col-xs-12">
-                <div className="caption">
-                  <h1 className="main-heading heading">My Page</h1>
-                </div>
-              </div>
+          <div style={{ width: "1080px" }} className="myPage noto">
+            <h3>
+              <strong>안녕하세요,</strong>
+            </h3>
+            <h1>
+              <strong>{Name}님!</strong>
+            </h1>
+            <p style={{ fontSize: "20px" }}>DESIA에 오신것을 환영합니다~</p>
+            <br />
+            <div
+              style={{ borderBottom: "1px solid #666", marginBottom: "30px" }}
+            >
+              <p>
+                <i
+                  style={{ fontSize: "30px", paddingRight: "10px" }}
+                  className="fa fa-clock-o"
+                  aria-hidden="true"
+                ></i>
+                예약 날짜:{" "}
+                {moment(UserInfo.reservationDate).format("YYYY-MM-DD HH:mm")}
+              </p>
+              <p>
+                <i
+                  style={{ fontSize: "30px", paddingRight: "10px" }}
+                  className="fa fa-clock-o"
+                  aria-hidden="true"
+                ></i>
+                예식일:{" "}
+                {moment(UserInfo.weddingDate).format("YYYY-MM-DD HH:mm")}
+              </p>
             </div>
-          </div>
-          <span className="year">TRENDS FOR 2020</span>
-        </section>
-        <div className="holder">
-          <h1>안녕하세요, {Name}님!</h1>
-          <p>DESIA에 오신것을 환영합니다~</p>
-          <Button>
-            <Link to="/admin">관리자 페이지</Link>
-          </Button>
-          <Button onClick={() => withdraw()}>회원 탈퇴</Button>
-          <div>
-            <p>예약 날짜: {UserInfo.reservationDate}</p>
-            <p>예식일: {UserInfo.weddingDate}</p>
+            <div
+              style={{
+                display: "flex",
+              }}
+            >
+              <button style={{ marginLeft: "auto" }} className="completeBtn">
+                <Link to="/admin">관리자 페이지</Link>
+              </button>
+            </div>
+            <div
+              style={{
+                display: "flex",
+              }}
+            >
+              <button
+                style={{ marginLeft: "auto" }}
+                className="completeBtn"
+                onClick={() => withdraw()}
+              >
+                <a>회원 탈퇴</a>
+              </button>
+            </div>
+
+            <div style={{ padding: "70px 0", fontSize: "20px" }}>
+              천천히 구경하고 가세요😀 (?)
+            </div>
           </div>
         </div>
       </div>
@@ -85,29 +127,63 @@ function MyPage(props) {
   } else {
     return (
       <div id="main">
-        <section
-          className="banner"
-          style={{ backgroundImage: `url(${aboutFHD})` }}
+        <Banner title="myPage" bg={aboutFHD} />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          <span className="sale-percent">Best of best</span>
-          <div className="container">
-            <div className="row">
-              <div className="col-xs-12">
-                <div className="caption">
-                  <h1 className="main-heading heading">My Page</h1>
-                </div>
-              </div>
+          <div style={{ width: "1080px" }} className="myPage noto">
+            <h3>
+              <strong>안녕하세요,</strong>
+            </h3>
+            <h1>
+              <strong>{Name}님!</strong>
+            </h1>
+            <p style={{ fontSize: "20px" }}>DESIA에 오신것을 환영합니다~</p>
+            <br />
+            <div
+              style={{ borderBottom: "1px solid #666", marginBottom: "30px" }}
+            >
+              <p>
+                <i
+                  style={{ fontSize: "30px", paddingRight: "10px" }}
+                  className="fa fa-clock-o"
+                  aria-hidden="true"
+                ></i>
+                예약 날짜:{" "}
+                {moment(UserInfo.reservationDate).format("YYYY-MM-DD HH:mm")}
+              </p>
+              <p>
+                <i
+                  style={{ fontSize: "30px", paddingRight: "10px" }}
+                  className="fa fa-clock-o"
+                  aria-hidden="true"
+                ></i>
+                예식일:{" "}
+                {moment(UserInfo.weddingDate).format("YYYY-MM-DD HH:mm")}
+              </p>
             </div>
-          </div>
-          <span className="year">TRENDS FOR 2020</span>
-        </section>
-        <div className="holder">
-          <h1>안녕하세요, {Name}님!</h1>
-          <p>DESIA에 오신것을 환영합니다~</p>
-          <Button onClick={() => withdraw()}>회원 탈퇴</Button>
-          <div>
-            <p>예약 날짜: {UserInfo.reservationDate}</p>
-            <p>예식일: {UserInfo.weddingDate}</p>
+
+            <div
+              style={{
+                display: "flex",
+              }}
+            >
+              <button
+                style={{ marginLeft: "auto" }}
+                className="completeBtn"
+                onClick={() => withdraw()}
+              >
+                회원 탈퇴
+              </button>
+            </div>
+
+            <div style={{ padding: "70px 0", fontSize: "20px" }}>
+              천천히 구경하고 가세요😀
+            </div>
           </div>
         </div>
       </div>

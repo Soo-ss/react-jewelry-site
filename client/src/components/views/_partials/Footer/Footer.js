@@ -11,14 +11,11 @@ function Footer() {
               <a href="/">DESIA</a>
             </div>
             <p>
-              Pharetra, erat sed fermentum
-              <br />
-              feugiat, velit mauris egestas
-              <br />
-              quam.
+              since <strong>2008</strong>
             </p>
+            <p>Copyright &copy; 2020. DESIA. All rights reserved.</p>
           </div>
-          <div className="col-xs-12 col-sm-4 col-lg-3">
+          <div className="col-xs-12 col-sm-4 col-lg-3 noto">
             <h3>contact us</h3>
             {/* Contact of the page */}
             <ul className="list-unstyled contact-info">
@@ -29,7 +26,7 @@ function Footer() {
               <li>
                 <i className="icon icon-email" />
                 <a className="txt" href="/">
-                  idontknow@youremail.com
+                  desiacw@naver.com
                 </a>
               </li>
               <li>
@@ -39,10 +36,18 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <i className="icon icon-printer" />
-                <a className="txt" href="/">
-                  (00)-213 1879017 fax
-                </a>
+                <i
+                  style={{ fontSize: "23px" }}
+                  className="icon fa fa-clock-o"
+                />
+                <a className="txt">평일 11시~19시</a>
+              </li>
+              <li>
+                <i
+                  style={{ fontSize: "23px" }}
+                  className="icon fa fa-clock-o"
+                />
+                <a className="txt">주말 11시~20시</a>
               </li>
             </ul>
           </div>
@@ -53,7 +58,7 @@ function Footer() {
               <li>
                 <a href="/">
                   <img
-                    src="https://instagram.ficn6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.64.1440.1440a/s640x640/97959378_535800403968198_6100804336270362318_n.jpg?_nc_ht=instagram.ficn6-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=DSlvzpXvbVIAX8noFWp&oh=f65391383bf799e3280c6c730d7b79a2&oe=5EF6940D"
+                    src="https://instagram.ficn6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.180.1440.1440a/s640x640/115931231_757769608368153_7633763631351077974_n.jpg?_nc_ht=instagram.ficn6-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=boIL45AHSXAAX_AYNVn&oh=d3dff73bd516701a48cf91f1c914b524&oe=5F58F8A9"
                     alt="description"
                   />
                 </a>
@@ -118,7 +123,6 @@ function Footer() {
           </div>
         </div>
       </div>
-      <span className="support">24H SUPPORT</span>
     </footer>
   );
 }

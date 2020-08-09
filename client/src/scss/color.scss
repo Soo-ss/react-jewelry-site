@@ -1,3 +1,6 @@
+// #c99035
+$my-color: #bfa38a;
+
 .btn,
 .btn-more:hover,
 .btn-primary,
@@ -56,7 +59,8 @@
 .slider-sec .slick-slider .slick-next.slick-arrow:hover:before,
 .blockquote-sec .blockquote-slider .slick-prev.slick-arrow:hover,
 .blockquote-sec .blockquote-slider .slick-next.slick-arrow:hover {
-  color: #c99035; }
+  color: $my-color;
+}
 
 .btn:before,
 .btn:after,
@@ -74,7 +78,8 @@
 .product-detial .pagg-slider .slick-current:after,
 .blockquote-sec .blockquote-slider .slick-prev.slick-arrow:hover:before,
 .blockquote-sec .blockquote-slider .slick-next.slick-arrow:hover:before {
-  border-color: #c99035; }
+  border-color: $my-color;
+}
 
 .nav-holder .nav-opener:hover,
 .nav-holder .nav-opener:focus,
@@ -87,7 +92,9 @@
 .product-block .btn-default:hover,
 .slider-sec .slick-slider li .over,
 .nav-holder .icon-list li .cart-num {
-  background: #c99035; }
+  background: $my-color;
+}
 
 .product-block:hover .box:before {
-  background: rgba(200, 143, 56, 0.6); }
+  background: $my-color;
+}

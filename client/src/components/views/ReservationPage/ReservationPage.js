@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import aboutFHD from "../../../images/aboutFHD.png";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Axios from "axios";
+import Banner from "../_partials/Banner/Banner";
 
 function ReservationPage(props) {
-  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
   const [Phone, setPhone] = useState("");
@@ -54,34 +54,11 @@ function ReservationPage(props) {
 
   return (
     <main id="main">
-      <section
-        className="banner"
-        style={{ backgroundImage: `url(${aboutFHD})` }}
-      >
-        <span className="sale-percent">Best of best</span>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-              <div className="caption">
-                <h1 className="main-heading heading">Reservation</h1>
-                <ul className="list-unstyled breadcrumbs">
-                  <li>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="/">shop</a>
-                  </li>
-                  <li>contact</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span className="year">TRENDS FOR 2020</span>
-      </section>
+      <Banner title="reservation" bg={aboutFHD} />
       <section className="contact-sec">
         <div className="map">
           <iframe
+            title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.280574870585!2d128.67509821552204!3d35.2243849624974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568cce63a6cb2e7%3A0xe1bb28f9bf7a8776!2z6rK97IOB64Ko64-EIOywveybkOyLnCDshLHsgrDqtawg7KSR7JWZ64-ZIDY3LTEy!5e0!3m2!1sko!2skr!4v1587348283496!5m2!1sko!2skr"
             width="100%"
             height="800px"
@@ -92,7 +69,7 @@ function ReservationPage(props) {
             tabIndex="0"
           ></iframe>
         </div>
-        <div className="text-holder">
+        <div className="text-holder noto">
           <div className="txt-frame">
             <div className="holder">
               <div className="contact-detail">
@@ -115,22 +92,25 @@ function ReservationPage(props) {
                     </a>
                   </li>
                   <li>
-                    <i className="icon icon-printer"></i>
-                    <a className="txt" href="/">
-                      (00)-213 1879017 fax
-                    </a>
+                    <i
+                      style={{ fontSize: "23px" }}
+                      className="icon fa fa-clock-o"
+                    />
+                    <a className="txt">평일 11시~19시</a>
+                  </li>
+                  <li>
+                    <i
+                      style={{ fontSize: "23px" }}
+                      className="icon fa fa-clock-o"
+                    />
+                    <a className="txt">주말 11시~20시</a>
                   </li>
                 </ul>
               </div>
               <div className="about-detail">
-                <h3>about us</h3>
-                <p>
-                  Pharetra, erat sed fermentum
-                  <br />
-                  feugiat, velit mauris egestas
-                  <br />
-                  quam mauris egestas quam.
-                </p>
+                <h3>warning</h3>
+                <p>(❁´◡`❁) 주의사항 ༼ つ ◕_◕ ༽つ</p>
+                <p>예약 원하시는 날짜, 시간과 연락처를 남겨주세요^^</p>
               </div>
             </div>
             <div className="holder">

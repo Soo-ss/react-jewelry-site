@@ -110,7 +110,7 @@ function Header(props) {
           <div className="row">
             <div className="col-xs-12">
               {/* logo of the page */}
-              <div className="logo">
+              <div style={{ paddingTop: "7px" }} className="logo">
                 <Link to="/">
                   <img src={logo} alt="DESIA" />
                 </Link>

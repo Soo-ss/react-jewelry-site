@@ -6590,3 +6590,54 @@ a:focus {
     margin: 0 0 70px;
   }
 }
+
+.completeBtn {
+  width: 20%;
+  padding: 5px;
+  margin: 12px 0;
+  background: #000;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  a {
+    color: #fff;
+  }
+
+  &:hover {
+    background: #fff;
+    a {
+      color: #000;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #000;
+    transition: 400ms ease all;
+  }
+
+  &:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    width: 100%;
+    transition: 0.8s ease all;
+  }
+}

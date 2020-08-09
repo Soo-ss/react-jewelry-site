@@ -1,4 +1,42 @@
-th,
-td {
-  padding: 5px;
+table {
+  width: 1080px;
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  thead {
+    tr {
+      background-color: #555;
+      color: #fff;
+    }
+
+    th {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
+  th,
+  td {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #dddddd;
+
+      &:nth-of-type(even) {
+        background-color: #333;
+        color: #ddd;
+      }
+
+      &:last-of-type {
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
 }
